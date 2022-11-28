@@ -5,13 +5,14 @@ from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
 
 from shortner.update_view import UpdateView
+from shortner.custom_view import CustomView
 
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "CustomView"]
 
 def home(request):
     print("hitting home")

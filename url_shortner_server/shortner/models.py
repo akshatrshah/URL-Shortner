@@ -23,6 +23,10 @@ class Link(models.Model):
         self.stub = "".join(choice(CHARS) for _ in range(STUB_LENGTH))
         super().save(*args, **kwargs)
 
+    def save_custom(self, custom_url, *args, **kwargs):
+        self.stub = custom_url ##### check if the custom_url is already in use by the user
+        super().save(*args, **kwargs)
+
     def to_json(self):
         """to_json converts link to JSON string"""
         return json.dumps(
