@@ -1,5 +1,5 @@
 """Views module stores all the views of the application"""
-
+import json
 from shortner.new_view import NewView
 from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
@@ -20,7 +20,9 @@ def home(request):
 
 
 def signup(request):
+    import pdb; pdb.set_trace()
     if request.method == "POST":
+        # requestJsonBody = json.loads(request)
         username = request.POST["username"]
         fname = request.POST["fname"]
         lname = request.POST["lname"]
