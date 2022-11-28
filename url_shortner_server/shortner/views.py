@@ -5,6 +5,7 @@ from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
 
 from shortner.update_view import UpdateView
+from shortner.login import login_test
 
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "login_test"]
