@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from shortner.views import NewView, StubView, UpdateView, DeleteView, CustomView, home, signin, signout, signup
+from shortner.views import NewView, StubView, UpdateView, DeleteView, CustomView, home, signin, signout, signup, login_test
 
 urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
@@ -27,6 +27,8 @@ urlpatterns = [
     path("update/", UpdateView.as_view(), name='update'),
     path("custom/", CustomView.as_view(), name='custom'),
     path('', home, name="home"),
+    path("test/", login_test, name="Test"),
+    path('/', home, name="home"),
     path('signup', signup, name="signup"),
     path('signin', signin, name="signin"),
     path('signout', signout, name="signout"),

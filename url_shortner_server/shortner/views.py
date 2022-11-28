@@ -1,18 +1,19 @@
 """Views module stores all the views of the application"""
-
+import json
 from shortner.new_view import NewView
 from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
 
 from shortner.update_view import UpdateView
 from shortner.custom_view import CustomView
+from shortner.login import login_test
 
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "CustomView"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "CustomView", "login_test"]
 
 def home(request):
     print("hitting home")
@@ -20,7 +21,9 @@ def home(request):
 
 
 def signup(request):
+    import pdb; pdb.set_trace()
     if request.method == "POST":
+        # requestJsonBody = json.loads(request)
         username = request.POST["username"]
         fname = request.POST["fname"]
         lname = request.POST["lname"]
