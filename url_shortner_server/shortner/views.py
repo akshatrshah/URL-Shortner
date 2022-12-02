@@ -36,8 +36,8 @@ def signup(request):
 
         myuser.save()
         messages.success(request, "Your Account has been successfully created.")
-        return redirect("home")
         request.session['username'] = username
+        return redirect("home")
     return render(request, "authentication/signup.html")
 
 def signin(request):
@@ -46,7 +46,7 @@ def signin(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["pass1"]
-
+        import pdb; pdb.set_trace()
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
@@ -68,8 +68,6 @@ def homepage(request, fname):
        args = {}
        args['userFname'] = fname
        return render(request, 'homepages/index.html', args)
-    # if(request.method == 'POST'): # TO handle new post - backup option
-    #     print("URL Generation requested!")
 
 
 

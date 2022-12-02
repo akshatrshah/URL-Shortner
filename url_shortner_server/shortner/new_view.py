@@ -14,8 +14,13 @@ class NewView(View):
 
     def post(self, request: HttpRequest):
         """post handles post requests to /new"""
-        httpBody = json.loads(request.body)
-        long_url = httpBody["long_url"]
+        import pdb; pdb.set_trace()
+        # httpBody = json.loads(request.body)
+        long_url = ''
+        if 'long-url' in request.POST:
+            long_url = request.POST["long-url"]
+        else:
+            redirect('homepage')
         username = request.session['username']
         if username == '':
             redirect('signin')
