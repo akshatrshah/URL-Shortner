@@ -36,11 +36,13 @@ def signup(request):
 
         myuser.save()
         messages.success(request, "Your Account has been successfully created.")
+        return redirect("home")
         request.session['username'] = username
-        return redirect("signin")
     return render(request, "authentication/signup.html")
 
 def signin(request):
+
+    # Only through forms
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["pass1"]
@@ -50,11 +52,26 @@ def signin(request):
             login(request,user)
             fname = user.first_name
             request.session['username'] = username
-            return render(request, "authentication/index.html",{"fname":fname})
+            return redirect("homepage",fname=fname)
         else:
             messages.error(request,"Bad Credentials!")
             return redirect("home")
-    return render(request, "authentication/signin.html")
+
+    # Render the main page if we try to access signin through the url (GET)
+    return render(request, "authentication/index.html")
+
+
+def homepage(request, fname):
+    if(request.method == 'GET'):
+       messages.success(request, "Login Successfull!")
+       print("{} has logged in".format(fname))
+       args = {}
+       args['userFname'] = fname
+       return render(request, 'homepages/index.html', args)
+    # if(request.method == 'POST'): # TO handle new post - backup option
+    #     print("URL Generation requested!")
+
+
 
 def signout(request):
     logout(request)
