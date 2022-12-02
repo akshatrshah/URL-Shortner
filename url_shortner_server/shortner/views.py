@@ -3,7 +3,7 @@ import json
 from shortner.new_view import NewView
 from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
-
+from shortner.list_view import ListUrlsView
 from shortner.update_view import UpdateView
 from shortner.login import login_test
 
@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "login_test"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "ListUrlsView", "login_test"]
 
 def home(request):
     print("hitting home")
@@ -20,7 +20,7 @@ def home(request):
 
 
 def signup(request):
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     if request.method == "POST":
         # requestJsonBody = json.loads(request)
         username = request.POST["username"]
@@ -36,20 +36,20 @@ def signup(request):
 
         myuser.save()
         messages.success(request, "Your Account has been successfully created.")
+        request.session['username'] = username
         return redirect("signin")
     return render(request, "authentication/signup.html")
 
 def signin(request):
-
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["pass1"]
 
         user = authenticate(username=username, password=password)
-
         if user is not None:
             login(request,user)
             fname = user.first_name
+            request.session['username'] = username
             return render(request, "authentication/index.html",{"fname":fname})
         else:
             messages.error(request,"Bad Credentials!")
