@@ -35,7 +35,7 @@
                         {% csrf_token %}
                         <div class="row row-space">
                             <div class="col-3">
-                                <div class="input-group form-group">
+                                <div class="form-group input-group ">
                                     <label for="username" class="label">Username</label>
                                     <input type="text" class="form-control input--style-4" id="username" name="username" placeholder="Username" Required>
                                 </div>
@@ -43,40 +43,38 @@
 
                             <div class="col-3">
                                 <div class="form-group input-group">
-                                    <label for="fname">First Name</label>
+                                    <label for="fname" class="label">First Name</label>
                                     <input type="text" class="form-control input--style-4" id="fname" name="fname" placeholder="First Name" Required>
                                 </div>
                             </div>
 
                             <div class="col-3">
                                 <div class="form-group input-group">
-                                    <label for="lname">Last Name</label>
+                                    <label for="lname" class="label">Last Name</label>
                                     <input type="text" class="form-control input--style-4" id="lname" name="lname" placeholder="Last Name" Required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row row-space">
                             <div class="col-3">
                                 <div class="form-group input-group">
-                                    <label for="email">Email</label>
+                                    <label for="email" class="label">Email</label>
                                     <input type="email" class="form-control input--style-4" id="email" name="email" placeholder="Email" Required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-group input-group">
-                                    <label for="pass1">Password</label>
+                                    <label for="pass1" class="label">Password</label>
                                     <input type="password" class="form-control input--style-4" id="pass1" name="pass1" placeholder="Password" Required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-group input-group">
-                                    <label for="pass2">Confirm Password</label>
+                                    <label for="pass2" class="label">Confirm Password</label>
                                     <input type="password" class="form-control input--style-4" id="pass2" name="pass2" placeholder="Confirm Password" Required>
                                 </div> 
                             </div>
                         </div>
                         <div class="p-t-15">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>                            
+                            <button type="submit" class="btn btn-primary btn--blue">Sign Up</button>                            
                         </div>
                     </form>
                 </div>

@@ -14,11 +14,14 @@ class NewView(View):
 
     def post(self, request: HttpRequest):
         """post handles post requests to /new"""
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         # httpBody = json.loads(request.body)
         long_url = ''
         if 'long-url' in request.POST:
             long_url = request.POST["long-url"]
+            custom_stub = None
+            if 'custom-stub' in request.POST:
+                custom_stub = request.POST["custom-stub"]
         else:
             redirect('homepage')
         username = request.session['username']
@@ -26,6 +29,9 @@ class NewView(View):
             redirect('signin')
         link = Link(long_url)
         link.username = username
-        link.save()
+        if custom_stub is not None:
+            link.save_custom(custom_stub)
+        else:
+            link.save()
         response = link.to_json()
         return HttpResponse(response, status=201)
