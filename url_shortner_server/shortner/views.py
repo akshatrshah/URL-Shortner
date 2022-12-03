@@ -47,7 +47,6 @@ def signin(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["pass1"]
-        # import pdb; pdb.set_trace()
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
