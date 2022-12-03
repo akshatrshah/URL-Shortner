@@ -48,6 +48,18 @@
             <div class="form-group">
               <input type="text" class="form-control" name="long-url" id="long-url" placeholder="Long-Url" required>
             </div>
+
+            <div class="custom-field">
+              <div class="radio">
+                  <span class="label">Do you want to provide custom url stub? (STUB_LENGTH is 10)</span>
+                  <div id="field_8"><label><input type="radio" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl').style.display='block'"> Yes</label><label><input type="radio" name="field_8" id="option_10" value="No" onclick="document.getElementById('divUrl').style.display='none'"> No</label></div>
+              </div>
+              </div>
+              
+              <div class="custom-field" id="divUrl" style="display:none">
+                <input type="text" class="form-control" name="custom-stub" id="custom-stub" placeholder="Custom-stub" />
+              </div>
+              
             <div class="text-center"><button type="submit">Generate</button></div>
           </form>
         </div>
