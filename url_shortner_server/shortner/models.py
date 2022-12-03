@@ -18,15 +18,17 @@ class Link(models.Model):
         primary_key=True, default=uuid4, editable=False)
     stub = models.CharField(max_length=STUB_LENGTH, unique=True)
     username = models.CharField(max_length=2083, default="xxx")
+    ctr = models.IntegerField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         seed(str(self.special_code))
         self.stub = "".join(choice(CHARS) for _ in range(STUB_LENGTH))
+        self.ctr = 0
         super().save(*args, **kwargs)
 
     def save_custom(self, custom_stub, *args, **kwargs):
-        print(custom_stub)
         self.stub = custom_stub ##### check if the custom_stub is already in use by the user
+        self.ctr = 0
         super().save(*args, **kwargs)
 
     def to_json(self):
