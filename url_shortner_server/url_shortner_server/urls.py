@@ -18,7 +18,7 @@ from django.urls import path, re_path
 from django.conf.urls.static import static
 
 
-from shortner.views import NewView, StubView, UpdateView, DeleteView, home, signin, signout, signup, login_test, ListUrlsView, homepage
+from shortner.views import NewView, StubView, UpdateView, DeleteView, CustomView, home, signin, signout, signup, login_test, ListUrlsView, homepage
 
 urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
@@ -26,6 +26,8 @@ urlpatterns = [
     path("delete/<slug:special_code>", DeleteView.as_view(), name="remove_link"),
     path("stub/<slug:stub>/", StubView.as_view(), name='stub'),
     path("update/", UpdateView.as_view(), name='update'),
+    path("custom/", CustomView.as_view(), name='custom'),
+    path('', home, name="home"),
     path("test/", login_test, name="Test"),
     path('', home, name="home"),
     path('list', ListUrlsView.as_view(), name = "list"),
