@@ -12,6 +12,7 @@ class ListUrlsView(View):
     def get(self, request: HttpRequest):
         """post handles post requests to /new"""
         username = request.session['username']
+        import pdb; pdb.set_trace()
         context = dict()
         if username == '':
             redirect('signin')
@@ -21,6 +22,7 @@ class ListUrlsView(View):
             x = dict()
             x['long_url'] = linkObj.long_url
             x['stub'] = linkObj.stub
+            x['special_code'] = linkObj.special_code
             context['list_of_links'].append(x)
-        
+
         return render(request, "homepages/listurls.html", context=context)

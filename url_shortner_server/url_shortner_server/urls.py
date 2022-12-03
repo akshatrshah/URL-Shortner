@@ -23,7 +23,7 @@ from shortner.views import NewView, StubView, UpdateView, DeleteView, home, sign
 urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
     path("homepage/new", NewView.as_view(), name='add_new'), #homepage/new to get it as post message in homepage. Figure it out later.
-    path("delete/", DeleteView.as_view(), name='delete'),
+    path("delete/<slug:special_code>", DeleteView.as_view(), name="remove_link"),
     path("stub/<slug:stub>/", StubView.as_view(), name='stub'),
     path("update/", UpdateView.as_view(), name='update'),
     path("test/", login_test, name="Test"),
