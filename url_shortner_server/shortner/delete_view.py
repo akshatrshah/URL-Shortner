@@ -10,10 +10,10 @@ import json
 class DeleteView(View):
     """DeleteView is responsible for deletion of the shortened links"""
 
-    def delete(self, request: HttpRequest):
+    def get(self, request: HttpRequest, special_code : str):
         """delete handles requests to be deleted /delete"""
-        httpBody = json.loads(request.body)
-        special_codes = httpBody["special_code"]
+        import pdb; pdb.set_trace()
+        special_codes = special_code
         try:
             member = Link.objects.get(special_code=special_codes)
             member.delete()
