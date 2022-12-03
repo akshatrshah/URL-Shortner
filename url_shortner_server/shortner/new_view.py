@@ -14,13 +14,12 @@ class NewView(View):
 
     def post(self, request: HttpRequest):
         """post handles post requests to /new"""
-        # import pdb; pdb.set_trace()
         # httpBody = json.loads(request.body)
         long_url = ''
         if 'long-url' in request.POST:
             long_url = request.POST["long-url"]
             custom_stub = None
-            if 'custom-stub' in request.POST:
+            if 'custom-stub' in request.POST and request.POST['custom-stub'] != '':
                 custom_stub = request.POST["custom-stub"]
         else:
             redirect('homepage')
@@ -33,5 +32,4 @@ class NewView(View):
             link.save_custom(custom_stub)
         else:
             link.save()
-        response = link.to_json()
-        return HttpResponse(response, status=201)
+        return redirect('list')
