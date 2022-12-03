@@ -31,14 +31,24 @@ def signup(request):
         password1 = request.POST["pass1"]
         password2 = request.POST["pass2"]
 
-        myuser = User.objects.create_user(username,email,password1)
-        myuser.first_name = fname
-        myuser.last_name = lname
+        
+        if len(email) < 4:
+            messages.error(request, "Email must be greater than 3 characters.")
+        elif len(fname) < 2:
+            messages.error(request, "First name must be greater than 1 character.")
+        elif password1 != password2:
+            messages.error(request, "Passwords don't match.")
+        elif len(password1) < 5:
+            messages.error(request, "Password must be at least 7 characters.")
+        else:
+            myuser = User.objects.create_user(username,email,password1)
+            myuser.first_name = fname
+            myuser.last_name = lname
 
-        myuser.save()
-        messages.success(request, "Your Account has been successfully created.")
-        request.session['username'] = username
-        return redirect("home")
+            myuser.save()
+            messages.success(request, "Your Account has been successfully created.")
+            request.session['username'] = username
+            return redirect("home")
     return render(request, "authentication/signup.html")
 
 def signin(request):
