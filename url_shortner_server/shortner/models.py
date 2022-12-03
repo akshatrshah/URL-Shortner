@@ -17,6 +17,7 @@ class Link(models.Model):
     special_code = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
     stub = models.CharField(max_length=STUB_LENGTH, unique=True)
+    username = models.CharField(max_length=2083, default="xxx")
 
     def save(self, *args, **kwargs):
         seed(str(self.special_code))
