@@ -22,5 +22,5 @@ class ListUrlsView(View):
             x['long_url'] = linkObj.long_url
             x['stub'] = linkObj.stub
             context['list_of_links'].append(x)
-
-        return render(request, "authentication/index.html", context=context)
+        
+        return render(request, "homepages/listurls.html", context=context)
