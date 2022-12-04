@@ -22,7 +22,6 @@ def home(request):
 
 
 def signup(request):
-    # import pdb; pdb.set_trace()
     if request.method == "POST":
         # requestJsonBody = json.loads(request)
         uservalue = request.POST["username"]
