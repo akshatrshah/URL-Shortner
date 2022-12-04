@@ -2,6 +2,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
+from shortner.models import give_link_by_username_long_url
 
 # from shortner.models import Link
 import json
@@ -36,12 +37,11 @@ class TestViews(TestCase):
         )
         
         self.assertEquals(http_response.status_code, 302)
+        link = give_link_by_username_long_url('akash2', req_long_url)
 
-        data = http_response.content
-        data = json.loads(data.decode("utf-8"))
-        long_url = data["long_url"]
-        stub = data["stub"]
-        special_code = data["special_code"]
+        long_url = link.long_url
+        stub = link.stub
+        special_code = link.special_code
         self.assertEquals(10, len(stub))
         self.assertNotEquals(9, len(stub))
         self.assertEquals(long_url, req_long_url)
@@ -49,18 +49,6 @@ class TestViews(TestCase):
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
         self.assertEquals(http_response.status_code, 302)
-
-        new_long_url = "https://facebook.com/"
-        update_response = self.client.put(
-            self.update_url,
-            {
-                "new_long_url": new_long_url,
-                "special_code": special_code,
-                "stub": stub
-                },
-            content_type="application/json",
-        )
-        self.assertEquals(update_response.status_code, 201)
 
         # Verify invalid put request with incorrect stub
         update_response = self.client.put(
