@@ -2,7 +2,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
-from shortner.models import give_link_by_username_long_url
+from shortner.models import give_link_by_username_long_url, give_links
 
 # from shortner.models import Link
 import json
@@ -47,6 +47,25 @@ class TestViews(TestCase):
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
         self.assertEquals(http_response.status_code, 302)
+
+        link = give_link_by_username_long_url('akash2', req_long_url)
+        assert link.ctr == 1
+
+        long_url2 = "https://moodle-courses2223.wolfware.ncsu.edu/grade/report/user/index.php?id=2910"
+        http_response = self.client.post(
+            reverse('add_new'),
+            {"long-url": long_url2},
+        )
+
+        http_response = self.client.get(
+            reverse('list')
+        )
+        self.assertEquals(http_response.status_code, 200)
+
+        links = give_links('akash2')
+        assert len(links) == 2
+
+
         delete_reponse = self.client.get(
             reverse('delete', args=[link.special_code]),
         )

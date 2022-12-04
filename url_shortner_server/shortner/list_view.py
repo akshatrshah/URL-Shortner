@@ -12,7 +12,6 @@ class ListUrlsView(View):
     def get(self, request: HttpRequest):
         """post handles post requests to /new"""
         username = request.session['username']
-        import pdb; pdb.set_trace()
         context = dict()
         if username == '':
             redirect('signin')

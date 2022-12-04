@@ -43,3 +43,7 @@ class Link(models.Model):
 def give_link_by_username_long_url(username, long_url):
     link = Link.objects.get(username=username, long_url=long_url)
     return link
+
+def give_links(username):
+    links = Link.objects.filter(username=username)
+    return links
