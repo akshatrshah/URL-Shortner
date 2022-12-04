@@ -62,6 +62,12 @@ class TestViews(TestCase):
         )
         self.assertEquals(http_response.status_code, 200)
 
+        http_response = self.client.get(
+            reverse('stats')
+        )
+        
+        self.assertEquals(http_response.status_code, 200)
+
         links = give_links('akash2')
         assert len(links) == 2
 
