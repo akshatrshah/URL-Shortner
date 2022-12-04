@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from shortner.views import DeleteView, NewView, UpdateView, StubView, StatsView
+from shortner.views import DeleteView, NewView, UpdateView, StubView, StatsView, ListUrlsView
 
 
 class TestUrls(SimpleTestCase):
@@ -23,3 +23,7 @@ class TestUrls(SimpleTestCase):
     def test_stats_url_is_resolved(self):
         url = reverse('stats')
         self.assertEquals(resolve(url).func.view_class, StatsView)
+    
+    def test_list_url_is_resolved(self):
+        url=reverse('list')
+        self.assertEquals(resolve(url).func.view_class, ListUrlsView)
