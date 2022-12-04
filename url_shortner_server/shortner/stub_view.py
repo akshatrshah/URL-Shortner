@@ -15,7 +15,7 @@ class StubView(View):
         try:
             link = Link.objects.get(stub=stub)  # pylint: disable=no-member
             link.ctr+=1
-            Link.objects.filter(username=link.username).update(ctr=link.ctr)
+            Link.objects.filter(username=link.username, stub=link.stub).update(ctr=link.ctr)
             return HttpResponseRedirect(link.long_url)
         except Link.DoesNotExist:  # pylint: disable=no-member
             return HttpResponseRedirect(REDIRECT_404_URL)
