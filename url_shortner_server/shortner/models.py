@@ -41,6 +41,5 @@ class Link(models.Model):
         )
 
 def give_link_by_username_long_url(username, long_url):
-    import pdb; pdb.set_trace()
     link = Link.objects.get(username=username, long_url=long_url)
     return link
