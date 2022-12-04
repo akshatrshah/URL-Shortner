@@ -9,7 +9,7 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func.view_class, NewView)
 
     def test_delete_url_is_resolved(self):
-        url = reverse('delete')
+        url = reverse('delete', args=['special'])
         self.assertEquals(resolve(url).func.view_class, DeleteView)
 
     def test_update_url_is_resolved(self):

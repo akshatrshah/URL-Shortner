@@ -1,6 +1,7 @@
 # from unittest import TestCase
 from django.test import TestCase, Client
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # from shortner.models import Link
 import json
@@ -11,16 +12,30 @@ class TestViews(TestCase):
         self.client = Client()
         self.add_new_url = reverse("add_new")
         self.update_url = reverse("update")
-        self.delete_url = reverse("delete")
+
+        # User.objects.create(username='akash2', password='password', email = 'ak@google.com')
+
+        # self.delete_url = reverse("delete")
 
     def test_all_view(self):
         req_long_url = "https://www.google.com/"
+
         http_response = self.client.post(
-            self.add_new_url,
-            {"long_url": req_long_url},
-            content_type="application/json",
+            reverse('signup'),
+            {'username' : 'akash2', 'pass1':'password', 'pass2' : 'password', 'fname' : 'Akash', 'lname' : 'Sarda', 'email' : 'aks@google.com'}
         )
-        self.assertEquals(http_response.status_code, 201)
+
+        http_response = self.client.post(
+            reverse('signin'),
+            {'username' : 'akash2', 'pass1':'password'}
+        )
+        
+        http_response = self.client.post(
+            reverse('add_new'),
+            {"long-url": req_long_url},
+        )
+        
+        self.assertEquals(http_response.status_code, 302)
 
         data = http_response.content
         data = json.loads(data.decode("utf-8"))

@@ -15,6 +15,9 @@ class NewView(View):
     def post(self, request: HttpRequest):
         """post handles post requests to /new"""
         # httpBody = json.loads(request.body)
+        username = request.session['username']
+        if username == '':
+            redirect('signin')
         long_url = ''
         if 'long-url' in request.POST:
             long_url = request.POST["long-url"]
@@ -22,10 +25,7 @@ class NewView(View):
             if 'custom-stub' in request.POST and request.POST['custom-stub'] != '':
                 custom_stub = request.POST["custom-stub"]
         else:
-            redirect('homepage')
-        username = request.session['username']
-        if username == '':
-            redirect('signin')
+            redirect('homepage', fname=username)
         link = Link(long_url)
         link.username = username
         if custom_stub is not None:
