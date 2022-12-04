@@ -61,19 +61,19 @@
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      {% for link in list_of_links %}
-                                      <tr class="inner-box">
-                                          <td>
-                                              <div class="event-wrap">
-                                                  <p><a href="#">{{ link.long_url }}</a></p>
-                                              </div>
-                                          </td>
-                                          <td>
-                                              <div class="r-no">
-                                                  <span>{{ link.stub }}</span>
-                                              </div>
-                                          </td>
-                                          <td>
+                                    {% for link in list_of_links %}
+                                    <tr class="inner-box">
+                                        <td>
+                                            <div class="event-wrap">
+                                                <p><a href="{{ link.long_url }}">{{ link.long_url }}</a></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="r-no">
+                                                <span><p><a href="{{ link.short_url }}"> {{ link.short_url }} </a></p></span>
+                                            </div>
+                                        </td>
+                                        <td>
                                             <div class="r-no">
                                                 <span>{{ link.ctr }}</span>
                                             </div>
