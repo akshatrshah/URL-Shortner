@@ -6,6 +6,7 @@ from shortner.delete_view import DeleteView
 from shortner.list_view import ListUrlsView
 from shortner.update_view import UpdateView
 from shortner.custom_view import CustomView
+from shortner.stats_view import StatsView
 from shortner.login import login_test
 
 from django.shortcuts import redirect, render
@@ -13,7 +14,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "ListUrlsView", "login_test", "CustomView"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "ListUrlsView", "login_test", "CustomView", "StatsView"]
 
 def home(request):
     print("hitting home")
@@ -31,14 +32,24 @@ def signup(request):
         password1 = request.POST["pass1"]
         password2 = request.POST["pass2"]
 
-        myuser = User.objects.create_user(username,email,password1)
-        myuser.first_name = fname
-        myuser.last_name = lname
+        
+        if len(email) < 4:
+            messages.error(request, "Email must be greater than 3 characters.")
+        elif len(fname) < 2:
+            messages.error(request, "First name must be greater than 1 character.")
+        elif password1 != password2:
+            messages.error(request, "Passwords don't match.")
+        elif len(password1) < 5:
+            messages.error(request, "Password must be at least 7 characters.")
+        else:
+            myuser = User.objects.create_user(username,email,password1)
+            myuser.first_name = fname
+            myuser.last_name = lname
 
-        myuser.save()
-        messages.success(request, "Your Account has been successfully created.")
-        request.session['username'] = username
-        return redirect("home")
+            myuser.save()
+            messages.success(request, "Your Account has been successfully created.")
+            request.session['username'] = username
+            return redirect("home")
     return render(request, "authentication/signup.html")
 
 def signin(request):
@@ -47,7 +58,6 @@ def signin(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["pass1"]
-        # import pdb; pdb.set_trace()
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)

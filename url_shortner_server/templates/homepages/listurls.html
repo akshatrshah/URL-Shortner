@@ -23,8 +23,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="single-post.html">Manage Your Urls</a></li>
-          <li><a href="about.html">Statistics</a></li>
+          <li><a href="/list">Manage Your Urls</a></li>
+          <li><a href="/stats">Statistics</a></li>
         </ul>
       </nav>
       <div class="position-relative">
@@ -38,6 +38,7 @@
           </form>
         </div>
       </div>
+      <a href="/signout">Sign Out</a>
     </div>
   </header>
   <main id="main">
@@ -64,12 +65,12 @@
                                       <tr class="inner-box">
                                           <td>
                                               <div class="event-wrap">
-                                                  <p><a href="#">{{ link.long_url }}</a></p>
+                                                  <p><a href="{{ link.long_url }}">{{ link.long_url }}</a></p>
                                               </div>
                                           </td>
                                           <td>
                                               <div class="r-no">
-                                                  <span>{{ link.stub }}</span>
+                                                  <span><p><a href="{{ link.short_url }}"> {{ link.short_url }} </a></p></span>
                                               </div>
                                           </td>
                                           <td>
