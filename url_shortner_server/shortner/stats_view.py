@@ -25,4 +25,5 @@ class StatsView(View):
             x['special_code'] = linkObj.special_code
             x['ctr'] = linkObj.ctr
             context['list_of_links'].append(x)
+        context['list_of_links']  = sorted(context['list_of_links'], key=lambda d: d['ctr'], reverse=True)
         return render(request, "homepages/urlstats.html", context=context)
