@@ -23,7 +23,7 @@ jobs:
           python-version: "3.8"
 
       - uses: mirromutth/mysql-action@v1.1
-        with:
+        with: |
           host port: 3306
           container port: 3306
           mysql version: '8.0'
