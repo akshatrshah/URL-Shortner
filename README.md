@@ -9,6 +9,8 @@
 [![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
 [![GitHub license](https://img.shields.io/github/license/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)
 
+[![Build](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml)
+
 [![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
 [![codecov](https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/AkashSarda3/URL-Shortner)
 
