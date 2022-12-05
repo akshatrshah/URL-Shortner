@@ -45,7 +45,7 @@ URL-Shortner aims to be the easiest ad-free url shortener that can be used to qu
 If you answered yes to any of the above questions, then this is going to bring a smile to your face!
 The URL-Shortner is a simple tool that you can utilize to create short versions of that long urls and share it with others. Additionally, its just a few clicks to update an existing URL if you made a mistake or the URL has changes over time. If you don't need it anymore, simply go ahead and delete that.
 
-![URL-Shortner Intro Video](https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Intro.gif)
+![URL-Shortner Intro Video](https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Intro.gif )
 
 URL-Shortner has APIs developed using python and front-end web application developed using angular.
 
@@ -60,14 +60,21 @@ URL-Shortner has APIs developed using python and front-end web application devel
 
 You can then go ahead and signup by giving basic details. We do not ask for credit card, or any other PII as your data is precious!
 
+![signup](https://user-images.githubusercontent.com/19202592/205764315-31ff66c6-0629-4bb6-a808-aefa9b8d2e7b.png)
 
-Enter the long version of the URL you want to generate a short version and click **Get short URL**.
+Enter the long version of the URL you want to generate a short version and click **Generate**.
+![Screenshot (47)](https://user-images.githubusercontent.com/19202592/205765335-38bd21cc-37e5-42f2-b687-c4a45adab907.png)
+
 You would be redirected to a page listing all the urls you have made and you can see which url you had made earlier
+![Screenshot (50)](https://user-images.githubusercontent.com/19202592/205765347-5ab09884-20db-403d-895e-1b6a852ef15c.png)
 
 You also have the capability to create a custom url for your application. We have included standards and protection to avoid SQL Injection attacks.
+![Screenshot (48)](https://user-images.githubusercontent.com/19202592/205765826-c4c532fd-f6ae-426f-9274-affc460b35cb.png)
+
 You can also delete the URLs from the listing page. 
 
 We have also added a new feature! You can analyse how much your short urls are being used for better analysis and tracking.
+![Screenshot (49)](https://user-images.githubusercontent.com/19202592/205765449-3d934017-3416-48ea-87ec-d0f8e399a0df.png)
 
 You no longer need to remember the special code that our beloved previous contributors had! Since you have an account you 
 can always manage your urls!
