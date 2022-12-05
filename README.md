@@ -11,6 +11,10 @@
 
 [![Build](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml)
 
+[![Linting Check](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/linting_workflow.yml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/linting_workflow.yml)
+
+[![DOI](https://zenodo.org/badge/568947164.svg)](https://zenodo.org/badge/latestdoi/568947164)
+
 [![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
 [![codecov](https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/AkashSarda3/URL-Shortner)
 
