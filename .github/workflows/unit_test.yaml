@@ -28,7 +28,7 @@ jobs:
       - name: Run makemigrations
         run:  python3 url_shortner_server/manage.py makemigrations
       - name: Run migrate
-        run:  python3 url_shortner_server/manage.py makemigrate
+        run:  python3 url_shortner_server/manage.py migrate
       - name: Run unit test 1
         run: python3 url_shortner_server/manage.py test shortner.tests.test_views  --settings=url_shortner_server.settingtest
       - name: Run unit test 2
