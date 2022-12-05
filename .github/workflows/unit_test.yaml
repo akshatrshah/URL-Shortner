@@ -22,9 +22,16 @@ jobs:
         with:
           python-version: "3.8"
 
+      - name: Set up MySQL
+        uses: docker/mysql-action@v3.1
+
+      - name: Start Ubuntu MySQL (SUDO)
+        run: sudo service mysql start
+
       - name: Install dependencies
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
+
       - name: Run makemigrations
         run:  python3 url_shortner_server/manage.py makemigrations
       - name: Run migrate
