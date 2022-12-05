@@ -23,7 +23,7 @@ jobs:
           python-version: "3.8"
 
       - name: Set up MySQL
-        uses: docker/mysql-action@v3.1
+        uses: mirromutth/mysql-action@v3.1
 
       - name: Start Ubuntu MySQL (SUDO)
         run: sudo service mysql start
