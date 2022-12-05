@@ -11,13 +11,21 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
 [![codecov](https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/AkashSarda3/URL-Shortner)
-[![Generate and Deploy Documentation](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/generate-documentation.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/generate-documentation.yml)
-[![Test & Coverage](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/CSC510-Group-5/AkashSarda3/actions/workflows/unit_test.yaml)
 
 [![Documentation Badge](https://img.shields.io/badge/API_Documentation-pdoc-blue.svg)](https://lemon-desert-093c6c80f.2.azurestaticapps.net/)
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
 
 ## URL-Shortner - Simple URL shortener
+
+Hi! We are Group 5 and we bring to you the new URL Shortner. While Group-5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
+
+We enhanced the UI and we enhanced the user experience!
+We added a feature to login/signup and create your own URLs! That's right now own those URLs garunteeing management of your URL is safe and cannot be updated by anyone else.
+We know why you use a URL shortner, you need to share links and you need to see how your customers are doing. We added some analytics to show how much your customers are user links!
+Last but none of the least, you do not want to use the boring URLs that URL Shortner gives you? We bring to you the custom url feature!
+You can create Custom Short Urls of your choice! Designed by you!
+Your customers will surely love it!
+
 
 Wondering why the Shortner is misspelled? Thats because this project is all about making it short, simple and easy to share.
 URL-Shortner aims to be the easiest ad-free url shortener that can be used to quickly generate sharable short urls.
@@ -37,42 +45,26 @@ URL-Shortner has APIs developed using python and front-end web application devel
 
 ## How to use?
 
-### Generate
+### Install
 
-Go to [yoururl.tech/url-shortner](https://yoururl.tech/url-shortner)
+1. Go to url_shortner_server
+2. do pip install -r requirements.txt
+3. do python manage.py runserver
+4. go to http://127.0.0.1:8000/
 
-![URL-Shortner-HomePage](https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Home.png)
+You can then go ahead and signup by giving basic details. We do not ask for credit card, or any other PII as your data is precious!
+
 
 Enter the long version of the URL you want to generate a short version and click **Get short URL**.
-You should see a popup mentioning the short version of URL and an **access code**. This code can be utilized to update or delete an existing URL.
+You would be redirected to a page listing all the urls you have made and you can see which url you had made earlier
 
-![URL-Generated-Popup](https://lmsstorageservice.blob.core.windows.net/images/URL_Generated_Popup.png)
+You also have the capability to create a custom url for your application. We have included standards and protection to avoid SQL Injection attacks.
+You can also delete the URLs from the listing page. 
 
-> Save the access code, since you won't be able to access it later.
+We have also added a new feature! You can analyse how much your short urls are being used for better analysis and tracking.
 
-### Update
-
-Click on Update Existing URL button. This will take you to the update url page.
-
-![URL-Update](https://lmsstorageservice.blob.core.windows.net/images/URL_Update.png)
-
-Enter the following details:
-
-1. **Short URL stub:** This is the last part of the short version of url. Eg: For the URL http://sef22group5.pythonanywhere.com/stub/oe7p1SKtPS, `oe7p1SKtPS` is the stub.
-
-2. **Access Code:**  This is the code that was provided to you at the time of creating new short URL.
-
-3. **Updated long URL:**: Enter the updated URL for the existing short version of URL.
-
-Click on Update URL and if all fields are correct and validated, the URL should be updated.
-
-### Delete
-
-If you no longer need a URL, click on Delete Existing URL button on the home page.
-
-![URL-Delete](https://lmsstorageservice.blob.core.windows.net/images/URL_Delete.png)
-
-Enter the access code that was provided to you at the time of creating new short URL. Click on Delete URL, and if the access code is correct, it will successfully delete the URL.
+You no longer need to remember the special code that our beloved previous contributors had! Since you have an account you 
+can always manage your urls!
 
 ---
 
@@ -80,6 +72,8 @@ Enter the access code that was provided to you at the time of creating new short
 
 Make a [pull request](https://github.com/CSC510-Group-5/URL-Shortner/compare) to help contribute.
 
-<a href="https://github.com/CSC510-Group-5/URL-Shortner/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=CSC510-Group-5/URL-Shortner&columns=24&max=480" />
+<a href="https://github.com/AkashSarda3/URL-Shortner/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AkashSarda3/URL-Shortner&columns=24&max=480" />
 </a>
+
+We reference our UI from Zenblog.
