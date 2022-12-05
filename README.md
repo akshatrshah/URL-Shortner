@@ -17,7 +17,7 @@
 
 ## URL-Shortner - Simple URL shortener
 
-Hi! We are Group 5 and we bring to you the new URL Shortner. While Group-5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
+Hi! We are Group 16 and we bring to you the new URL Shortner. While Group-5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
 
 We enhanced the UI and we enhanced the user experience!
 We added a feature to login/signup and create your own URLs! That's right now own those URLs garunteeing management of your URL is safe and cannot be updated by anyone else.
@@ -70,7 +70,7 @@ can always manage your urls!
 
 ## We love our contributors ❤️❤️
 
-Make a [pull request](https://github.com/CSC510-Group-5/URL-Shortner/compare) to help contribute.
+Make a [pull request](https://github.com/AkashSarda3/URL-Shortner/compare) to help contribute.
 
 <a href="https://github.com/AkashSarda3/URL-Shortner/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AkashSarda3/URL-Shortner&columns=24&max=480" />
