@@ -8,7 +8,6 @@ from django.db import models
 
 from shortner.constants import CHARS, STUB_LENGTH
 
-
 class Link(models.Model):
     """Link model refers to a conversion of a long URL to a shortened one"""
 
@@ -40,3 +39,11 @@ class Link(models.Model):
                 "stub": self.stub,
             }
         )
+
+def give_link_by_username_long_url(username, long_url):
+    link = Link.objects.get(username=username, long_url=long_url)
+    return link
+
+def give_links(username):
+    links = Link.objects.filter(username=username)
+    return links

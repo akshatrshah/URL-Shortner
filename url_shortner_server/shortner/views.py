@@ -22,33 +22,37 @@ def home(request):
 
 
 def signup(request):
-    # import pdb; pdb.set_trace()
     if request.method == "POST":
         # requestJsonBody = json.loads(request)
-        username = request.POST["username"]
+        uservalue = request.POST["username"]
         fname = request.POST["fname"]
         lname = request.POST["lname"]
         email = request.POST["email"]
         password1 = request.POST["pass1"]
         password2 = request.POST["pass2"]
 
-        
-        if len(email) < 4:
+        if User.objects.filter(username=uservalue).exists():
+            messages.error(request, "Username is already taken")
+        elif User.objects.filter(email = email).exists():
+            messages.error(request, "Email is already used")
+        elif len(email) < 4:
             messages.error(request, "Email must be greater than 3 characters.")
         elif len(fname) < 2:
             messages.error(request, "First name must be greater than 1 character.")
+        elif len(lname) < 2:
+            messages.error(request, "Last name must be greater than 1 character.")
         elif password1 != password2:
             messages.error(request, "Passwords don't match.")
         elif len(password1) < 5:
-            messages.error(request, "Password must be at least 7 characters.")
+            messages.error(request, "Password must be at least 5 characters.")
         else:
-            myuser = User.objects.create_user(username,email,password1)
+            myuser = User.objects.create_user(uservalue,email,password1)
             myuser.first_name = fname
             myuser.last_name = lname
 
             myuser.save()
             messages.success(request, "Your Account has been successfully created.")
-            request.session['username'] = username
+            request.session['username'] = uservalue
             return redirect("home")
     return render(request, "authentication/signup.html")
 

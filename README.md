@@ -1,15 +1,15 @@
 # URL-Shortner 🔗
 
-[![GitHub Release](https://img.shields.io/github/v/release/CSC510-Group-5/URL-Shortner?style=plastic)](https://github.com/CSC510-Group-5/URL-Shortner/releases)
-[![GitHub Tag](https://img.shields.io/github/v/tag/CSC510-Group-5/URL-Shortner?style=plastic)](https://github.com/CSC510-Group-5/URL-Shortner/releases)
-[![GitHub forks](https://img.shields.io/github/forks/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/network)
-[![GitHub stars](https://img.shields.io/github/stars/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/stargazers)
-[![GitHub contributors](https://img.shields.io/github/contributors/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/graphs/contributors)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/graphs/commit-activity)
+[![GitHub Release](https://img.shields.io/github/v/release/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
+[![GitHub Tag](https://img.shields.io/github/v/tag/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
+[![GitHub forks](https://img.shields.io/github/forks/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/network)
+[![GitHub stars](https://img.shields.io/github/stars/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/contributors)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/commit-activity)
 [![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
-[![GitHub license](https://img.shields.io/github/license/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)
 
-[![GitHub issues](https://img.shields.io/github/issues/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/issues)
+[![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
 [![codecov](https://codecov.io/gh/CSC510-Group-5/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/CSC510-Group-5/URL-Shortner)
 [![Build and Push WebApp](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml)
 [![CodeQL](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/codeql-analysis.yml)

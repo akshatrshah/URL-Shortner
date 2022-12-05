@@ -1,6 +1,8 @@
 # from unittest import TestCase
 from django.test import TestCase, Client
 from django.urls import reverse
+from django.contrib.auth.models import User
+from shortner.models import give_link_by_username_long_url, give_links
 
 # from shortner.models import Link
 import json
@@ -11,74 +13,71 @@ class TestViews(TestCase):
         self.client = Client()
         self.add_new_url = reverse("add_new")
         self.update_url = reverse("update")
-        self.delete_url = reverse("delete")
+    
+    def tearDown(self) -> None:
+        user = User.objects.get(username='akash2')
+        user.delete()
+        return super().tearDown()
 
     def test_all_view(self):
         req_long_url = "https://www.google.com/"
         http_response = self.client.post(
-            self.add_new_url,
-            {"long_url": req_long_url},
-            content_type="application/json",
+            reverse('signup'),
+            {'username' : 'akash2', 'pass1':'password', 'pass2' : 'password', 'fname' : 'Akash', 'lname' : 'Sarda', 'email' : 'aks@google.com'}
         )
-        self.assertEquals(http_response.status_code, 201)
 
-        data = http_response.content
-        data = json.loads(data.decode("utf-8"))
-        long_url = data["long_url"]
-        stub = data["stub"]
-        special_code = data["special_code"]
+        http_response = self.client.post(
+            reverse('signin'),
+            {'username' : 'akash2', 'pass1':'password'}
+        )
+        
+        http_response = self.client.post(
+            reverse('add_new'),
+            {"long-url": req_long_url},
+        )
+        
+        self.assertEquals(http_response.status_code, 302)
+        link = give_link_by_username_long_url('akash2', req_long_url)
+        long_url = link.long_url
+        stub = link.stub
+        special_code = link.special_code
         self.assertEquals(10, len(stub))
         self.assertNotEquals(9, len(stub))
         self.assertEquals(long_url, req_long_url)
-
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
         self.assertEquals(http_response.status_code, 302)
 
-        new_long_url = "https://facebook.com/"
-        update_response = self.client.put(
-            self.update_url,
-            {
-                "new_long_url": new_long_url,
-                "special_code": special_code,
-                "stub": stub
-                },
-            content_type="application/json",
-        )
-        self.assertEquals(update_response.status_code, 201)
+        link = give_link_by_username_long_url('akash2', req_long_url)
+        assert link.ctr == 1
 
-        # Verify invalid put request with incorrect stub
-        update_response = self.client.put(
-            self.update_url,
-            {
-                "new_long_url": new_long_url,
-                "special_code": special_code,
-                "stub": stub + "0",
-            },
-            content_type="application/json",
+        long_url2 = "https://moodle-courses2223.wolfware.ncsu.edu/grade/report/user/index.php?id=2910"
+        http_response = self.client.post(
+            reverse('add_new'),
+            {"long-url": long_url2},
         )
-        self.assertEquals(update_response.status_code, 404)
 
-        self.stub_url = reverse("stub", args=[stub])
-        http_response = self.client.get(self.stub_url)
-        print(http_response)
-        self.assertEquals(http_response.status_code, 302)
-        self.assertEquals(http_response.url, new_long_url)
-        # Valid delete
-        delete_reponse = self.client.delete(
-            self.delete_url,
-            {"special_code": special_code},
-            content_type="application/json",
+        http_response = self.client.get(
+            reverse('list')
         )
-        self.assertEquals(delete_reponse.status_code, 204)
+        self.assertEquals(http_response.status_code, 200)
+
+        http_response = self.client.get(
+            reverse('stats')
+        )
+        
+        self.assertEquals(http_response.status_code, 200)
+
+        links = give_links('akash2')
+        assert len(links) == 2
+
+
+        delete_reponse = self.client.get(
+            reverse('delete', args=[link.special_code]),
+        )
+        self.assertEquals(delete_reponse.status_code, 302)
         # Verify error in deleting deleted entry
         delete_reponse = self.client.delete(
-            self.delete_url,
-            {"special_code": special_code},
-            content_type="application/json",
+            reverse('delete', args=[link.special_code]),
         )
-        self.assertEquals(delete_reponse.status_code, 404)
-
-        self.stub_url = reverse("stub", args=[stub])
-        http_response = self.client.get(self.stub_url)
-        self.assertEquals(http_response.status_code, 302)
+        self.assertEquals(delete_reponse.status_code, 405)
