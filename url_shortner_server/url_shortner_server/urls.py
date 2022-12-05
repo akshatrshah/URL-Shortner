@@ -14,22 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
-from django.conf.urls.static import static
+from django.urls import path
 
-
-from shortner.views import NewView, StubView, UpdateView, DeleteView, CustomView, home, signin, signout, signup, login_test, ListUrlsView, homepage, StatsView
+from shortner.views import NewView, StubView, UpdateView, DeleteView
+from shortner.views import CustomView, home, signin, signout, signup
+from shortner.views import login_test, ListUrlsView, homepage, StatsView
 
 urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
-    path("new", NewView.as_view(), name='add_new'), #homepage/new to get it as post message in homepage. Figure it out later.
+    # homepage/new to get it as post message in homepage. Figure it out later.
+    path("new", NewView.as_view(), name='add_new'),
     path("delete/<slug:special_code>", DeleteView.as_view(), name='delete'),
     path("stub/<slug:stub>/", StubView.as_view(), name='stub'),
     path("update/", UpdateView.as_view(), name='update'),
     path("custom/", CustomView.as_view(), name='custom'),
     path('', home, name="home"),
     path("test/", login_test, name="Test"),
-    path('list', ListUrlsView.as_view(), name = "list"),
+    path('list', ListUrlsView.as_view(), name="list"),
     path('stats', StatsView.as_view(), name='stats'),
     path('signup', signup, name="signup"),
     path('signin', signin, name="signin"),

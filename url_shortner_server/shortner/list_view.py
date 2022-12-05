@@ -1,10 +1,9 @@
 from django.http.request import HttpRequest
-from django.http.response import HttpResponse
 from django.views.generic import View
 from django.shortcuts import redirect, render
-import json
 
 from shortner.models import Link
+
 
 class ListUrlsView(View):
     """NewView is responsible for creation of new shortened links"""
@@ -20,7 +19,8 @@ class ListUrlsView(View):
         for linkObj in list_of_links:
             x = dict()
             x['long_url'] = linkObj.long_url
-            x['short_url'] = request.build_absolute_uri('/') + 'stub/' + linkObj.stub
+            x['short_url'] = request.build_absolute_uri('/') + \
+                'stub/' + linkObj.stub
             x['special_code'] = linkObj.special_code
             context['list_of_links'].append(x)
 
