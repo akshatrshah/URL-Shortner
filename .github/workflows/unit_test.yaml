@@ -11,14 +11,6 @@ on:
 jobs:
   Unit-Tests:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: urlshortner
-        ports: ['3306:3306']
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - run: echo "The job was triggered on branch ${{ github.ref }}."
 
@@ -75,13 +67,6 @@ jobs:
         run: |
           coverage run url_shortner_server/manage.py test shortner
           coverage report --omit=url_shortner_server/shortner/__init__.py
-        env:
-          DBENGINE: django.db.backends.mysql
-          DBNAME: urlshortner
-          DBUSER: djangouser
-          DBPASSWORD: password
-          DBHOST: 127.0.0.1
-          DBPORT: $
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
