@@ -2,7 +2,7 @@ name: Build and Push WebApp
 
 on:
   push:
-    branches: [main]
+    branches: [arvind/fixBuild]
   workflow_dispatch:
 
 env:

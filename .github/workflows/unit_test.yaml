@@ -1,10 +1,10 @@
 name: Test & Coverage
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "arvind/fixBuild" ]
   pull_request:
     branches:
-      - "main"
+      - "arvind/fixBuild"
   workflow_dispatch:
   schedule:
     - cron: '18 18 * * 2'
@@ -20,14 +20,17 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
-
+          python-version: "3.8"
       - name: Install dependencies
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
-      - name: Run unit test
-        run: python url_shortner_server/manage.py test shortner
-
+      - name: Run migrate
+        run:  python3 url_shortner_server/manage.py migrate --settings=url_shortner_server.settingtest
+      - name: Run unit test 2
+        run: python3 url_shortner_server/manage.py test shortner.tests.test_urls  --settings=url_shortner_server.settingtest
+      - name: Run unit test 1
+        working-directory: ./url_shortner_server
+        run: python3 manage.py test shortner.tests.test_views  --settings=url_shortner_server.settingtest
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Angular-Unit-Tests:
     runs-on: ubuntu-latest
@@ -58,15 +61,16 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.8"
 
       - name: Install dependencies
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
       - name: Run code coverage
+        working-directory: ./url_shortner_server
         run: |
-          coverage run url_shortner_server/manage.py test shortner
-          coverage report --omit=url_shortner_server/shortner/__init__.py
+          coverage run manage.py test shortner --settings=url_shortner_server.settingtest
+          coverage report --omit=shortner/__init__.py
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
@@ -106,7 +110,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.8"
 
       - name: Install dependencies
         run: |
