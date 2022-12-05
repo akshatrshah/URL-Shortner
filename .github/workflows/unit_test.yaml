@@ -30,7 +30,11 @@ jobs:
 
       - run: echo "The job was triggered on branch ${{ github.ref }}."
 
-      - run: mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS urlshortner;'
+    - name: Verify MySQL connection from container 
+      run: |
+        apt-get update
+        apt-get install -y mysql-client
+        mysql --host mydb -uroot -ppassword -e "SHOW DATABASES"
 
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -39,9 +43,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.8"
-
-      - name: Start Ubuntu MySQL (SUDO)
-        run: sudo service mysql start
 
       - name: Install dependencies
         run: |

@@ -83,7 +83,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "urlshortner",
-        "USER": "root",
+        "USER": "djangouser",
         "PASSWORD": "password",
         "HOST": "127.0.0.1",
         "PORT": "3306",
