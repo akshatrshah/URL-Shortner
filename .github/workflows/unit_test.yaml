@@ -22,16 +22,6 @@ jobs:
         with:
           python-version: "3.8"
 
-      - uses: mirromutth/mysql-action@v1.1
-        with: |
-          host port: 3306
-          container port: 3306
-          mysql version: '8.0'
-          mysql database: 'urlshortner'
-          mysql root password: 'password'
-          mysql user: 'djangouser'
-          mysql password: 'password'
-
       - name: Start Ubuntu MySQL (SUDO)
       - run: |
            sudo /lib/systemd/systemd-sysv-install enable mysql
