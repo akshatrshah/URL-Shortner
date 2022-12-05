@@ -3,7 +3,7 @@ name: Generate and Deploy Documentation
 on:
   push:
     branches:
-      - main
+      - arvind/fixBuild
   workflow_dispatch:
 
 jobs:
