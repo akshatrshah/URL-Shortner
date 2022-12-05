@@ -12,9 +12,6 @@ jobs:
   build:
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8"]
     permissions:
       packages: write
       contents: read
