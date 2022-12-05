@@ -1,5 +1,4 @@
 """Views module stores all the views of the application"""
-import json
 from shortner.new_view import NewView
 from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
@@ -14,7 +13,9 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-__all__ = ["NewView", "StubView", "UpdateView", "DeleteView", "ListUrlsView", "login_test", "CustomView", "StatsView"]
+__all__ = ["NewView", "StubView", "UpdateView", "DeleteView",
+           "ListUrlsView", "login_test", "CustomView", "StatsView"]
+
 
 def home(request):
     print("hitting home")
@@ -33,28 +34,34 @@ def signup(request):
 
         if User.objects.filter(username=uservalue).exists():
             messages.error(request, "Username is already taken")
-        elif User.objects.filter(email = email).exists():
+        elif User.objects.filter(email=email).exists():
             messages.error(request, "Email is already used")
         elif len(email) < 4:
-            messages.error(request, "Email must be greater than 3 characters.")
+            messages.error(request, "Email must be greater \
+                than 3 characters.")
         elif len(fname) < 2:
-            messages.error(request, "First name must be greater than 1 character.")
+            messages.error(request, "First name must be \
+                greater than 1 character.")
         elif len(lname) < 2:
-            messages.error(request, "Last name must be greater than 1 character.")
+            messages.error(request, "Last name must be \
+                greater than 1 character.")
         elif password1 != password2:
             messages.error(request, "Passwords don't match.")
         elif len(password1) < 5:
-            messages.error(request, "Password must be at least 5 characters.")
+            messages.error(request, "Password must be \
+                at least 5 characters.")
         else:
-            myuser = User.objects.create_user(uservalue,email,password1)
+            myuser = User.objects.create_user(uservalue, email, password1)
             myuser.first_name = fname
             myuser.last_name = lname
 
             myuser.save()
-            messages.success(request, "Your Account has been successfully created.")
+            messages.success(request, "Your Account has been \
+                successfully created.")
             request.session['username'] = uservalue
             return redirect("home")
     return render(request, "authentication/signup.html")
+
 
 def signin(request):
 
@@ -64,12 +71,12 @@ def signin(request):
         password = request.POST["pass1"]
         user = authenticate(username=username, password=password)
         if user is not None:
-            login(request,user)
+            login(request, user)
             fname = user.first_name
             request.session['username'] = username
-            return redirect("homepage",fname=fname)
+            return redirect("homepage", fname=fname)
         else:
-            messages.error(request,"Bad Credentials!")
+            messages.error(request, "Bad Credentials!")
             return redirect("home")
 
     # Render the main page if we try to access signin through the url (GET)
@@ -77,13 +84,12 @@ def signin(request):
 
 
 def homepage(request, fname):
-    if(request.method == 'GET'):
-       messages.success(request, "Login Successfull!")
-       print("{} has logged in".format(fname))
-       args = {}
-       args['userFname'] = fname
-       return render(request, 'homepages/index.html', args)
-
+    if (request.method == 'GET'):
+        messages.success(request, "Login Successfull!")
+        print("{} has logged in".format(fname))
+        args = {}
+        args['userFname'] = fname
+        return render(request, 'homepages/index.html', args)
 
 
 def signout(request):
