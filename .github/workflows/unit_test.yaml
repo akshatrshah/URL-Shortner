@@ -25,8 +25,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
-      - name: Run unit test
-        run: python url_shortner_server/manage.py test shortner
+      - name: Run unit test 1
+        run: python3 url_shortner_server/manage.py test shortner.tests.test_views  --settings=url_shortner_server.settingtest
+      - name: Run unit test 2
+        run: python3 url_shortner_server/manage.py test shortner.tests.test_urls  --settings=url_shortner_server.settingtest
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Angular-Unit-Tests:
