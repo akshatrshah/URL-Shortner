@@ -1,10 +1,10 @@
 name: Build
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "arvind/badges" ]
   pull_request:
     branches:
-      - "main"
+      - "arvind/badges"
   workflow_dispatch:
   schedule:
     - cron: '18 18 * * 2'
