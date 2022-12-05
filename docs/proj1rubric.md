@@ -1,6 +1,6 @@
 # Project Rubric
 
-GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/CSC510-Group-5/URL-Shortner)
+GitHub URL: [https://github.com/AkashSarda3/URL-Shortner](https://github.com/CSC510-Group-5/URL-Shortner)
 
 |Notes|Assessment (Sum = 269/294)|Evidence|
 |-----|----------|--------|
@@ -40,7 +40,7 @@ GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/
 |Do you publish case studies to show how your software has been used by yourself and others?|0|Not Applicable|
 |Is the name of your project/software unique?|2|Yes, it was forked from group5 though|
 |Is your project/software name free from trademark violations?|3|[No results were found in Trademark Electronic Search System](https://tmsearch.uspto.gov/bin/showfield?f=toc&state=4802%3Aam0oaq.1.1&p_search=searchss&p_L=50&BackReference=&p_plural=yes&p_s_PARA1=&p_tagrepl%7E%3A=PARA1%24LD&expr=PARA1+AND+PARA2&p_s_PARA2=URL+shortner&p_tagrepl%7E%3A=PARA2%24COMB&p_op_ALL=AND&a_default=search&a_search=Submit+Query&a_search=Submit+Query)|
-|Is your software available as a package that can be deployed without building it?|3|[Not applicable as it is supposed to be hosted]()|
+|Is your software available as a package that can be deployed without building it?|3|[Yes](https://github.com/AkashSarda3/URL-Shortner/pkgs/container/url-shortner)|
 |Is your software available for free?|3|[Yes](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)|
 |Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository?|3|[Source code is available on GitHub](https://github.com/AkashSarda3/URL-Shortner)|
 |Is your software hosted in an established, third-party repository like GitHub (https://github.com), BitBucket (https://bitbucket.org), LaunchPad (https://launchpad.net) or SourceForge (https://sourceforge.net)?|3|[Source code is available on GitHub](https://github.com/AkashSarda3/URL-Shortner)|
