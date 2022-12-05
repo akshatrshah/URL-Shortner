@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>shortner API documentation</title>
+<meta name="description" content="URL-Shortner 🔗 …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>shortner</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="url-shortner">URL-Shortner 🔗</h1>
+<p><a href="https://github.com/AkashSarda3/URL-Shortner/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/AkashSarda3/URL-Shortner?style=plastic"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/releases"><img alt="GitHub Tag" src="https://img.shields.io/github/v/tag/AkashSarda3/URL-Shortner?style=plastic"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/AkashSarda3/URL-Shortner"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/AkashSarda3/URL-Shortner"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/AkashSarda3/URL-Shortner"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/graphs/commit-activity"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/AkashSarda3/URL-Shortner"></a>
+<a href="https://zenodo.org/badge/latestdoi/537949437"><img alt="DOI" src="https://zenodo.org/badge/537949437.svg"></a>
+<a href="https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/AkashSarda3/URL-Shortner"></a></p>
+<p><a href="https://github.com/AkashSarda3/URL-Shortner/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/AkashSarda3/URL-Shortner"></a>
+<a href="https://codecov.io/gh/AkashSarda3/URL-Shortner"><img alt="codecov" src="https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B"></a></p>
+<p><a href="https://lemon-desert-093c6c80f.2.azurestaticapps.net/"><img alt="Documentation Badge" src="https://img.shields.io/badge/API_Documentation-pdoc-blue.svg"></a>
+<a href="https://victorious-sky-08a81ed0f.2.azurestaticapps.net/"><img alt="Documentation Badge" src="https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg"></a></p>
+<h2 id="url-shortner-simple-url-shortener">URL-Shortner - Simple URL shortener</h2>
+<p>Hi! We are Group 5 and we bring to you the new URL Shortner. While Group-5 did a tremendous job starting with this project, we wanted to add new features to make it even better. </p>
+<p>We enhanced the UI and we enhanced the user experience!
+We added a feature to login/signup and create your own URLs! That's right now own those URLs garunteeing management of your URL is safe and cannot be updated by anyone else.
+We know why you use a URL shortner, you need to share links and you need to see how your customers are doing. We added some analytics to show how much your customers are user links!
+Last but none of the least, you do not want to use the boring URLs that URL Shortner gives you? We bring to you the custom url feature!
+You can create Custom Short Urls of your choice! Designed by you!
+Your customers will surely love it!</p>
+<p>Wondering why the Shortner is misspelled? Thats because this project is all about making it short, simple and easy to share.
+URL-Shortner aims to be the easiest ad-free url shortener that can be used to quickly generate sharable short urls.</p>
+<ul>
+<li>
+<p>Ever typed out a long url on your phone only to see that you missed a '/' or misspelled a word?</p>
+</li>
+<li>
+<p>Have you shared multiple URLs with others because you sent an incorrect URL earlier?</p>
+</li>
+<li>
+<p>Had to update the same document every year but with updated URL, wondering if there was a way to keep the URL the same and just redirect to new one every year?</p>
+</li>
+</ul>
+<p>If you answered yes to any of the above questions, then this is going to bring a smile to your face!
+The URL-Shortner is a simple tool that you can utilize to create short versions of that long urls and share it with others. Additionally, its just a few clicks to update an existing URL if you made a mistake or the URL has changes over time. If you don't need it anymore, simply go ahead and delete that.</p>
+<p><img alt="URL-Shortner Intro Video" src="https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Intro.gif"></p>
+<p>URL-Shortner has APIs developed using python and front-end web application developed using angular.</p>
+<h2 id="how-to-use">How to use?</h2>
+<h3 id="install">Install</h3>
+<ol>
+<li>Go to url_shortner_server</li>
+<li>do pip install -r requirements.txt</li>
+<li>do python manage.py runserver</li>
+<li>go to <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></li>
+</ol>
+<p>You can then go ahead and signup by giving basic details. We do not ask for credit card, or any other PII as your data is precious!</p>
+<p>Enter the long version of the URL you want to generate a short version and click <strong>Get short URL</strong>.
+You would be redirected to a page listing all the urls you have made and you can see which url you had made earlier</p>
+<p>You also have the capability to create a custom url for your application. We have included standards and protection to avoid SQL Injection attacks.
+You can also delete the URLs from the listing page. </p>
+<p>We have also added a new feature! You can analyse how much your short urls are being used for better analysis and tracking.</p>
+<p>You no longer need to remember the special code that our beloved previous contributors had! Since you have an account you
+can always manage your urls!</p>
+<hr>
+<h2 id="we-love-our-contributors">We love our contributors ❤️❤️</h2>
+<p>Make a <a href="https://github.com/CSC510-Group-5/URL-Shortner/compare">pull request</a> to help contribute.</p>
+<p><a href="https://github.com/AkashSarda3/URL-Shortner/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=AkashSarda3/URL-Shortner&columns=24&max=480" />
+</a></p>
+<p>We reference our UI from Zenblog.</p>
+<h1 id="url-shortner-apis">URL Shortner APIs</h1>
+<p><a href="https://lemon-desert-093c6c80f.2.azurestaticapps.net/"><img alt="Documentation Badge" src="https://img.shields.io/badge/API_Documentation-pdoc-blue.svg"></a></p>
+<p>This folder houses the Django API used for the URL Shortner.</p>
+<p>The Django project is named <code>url_shortner_server</code> while the app within is called <code><a title="shortner" href="#shortner">shortner</a></code>.</p>
+<h2 id="development">Development</h2>
+<p>To add new features or fix a bug in the API, you can perform the following steps:</p>
+<ol>
+<li>Clone the repository.</li>
+<li>Install Python 3 from <a href="https://www.python.org/downloads/">here</a> for your choice of operating system.</li>
+<li>Run <code>pip install -r requirements.txt</code>.</li>
+<li>Run <code>python manage.py runserver</code> to start the server.</li>
+<li>To make sure the API is running, visit <code>http://localhost:8000/admin</code> to see the default Django admin interface.</li>
+</ol>
+<h2 id="deployment">Deployment</h2>
+<p>The API has been deployed using <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>. Instructions for deployment can be found <a href="https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/">here</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Some common HTTP status codes that can be seen in the logs provided by the Django server:</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Check the HTTP request to be valid for the URL.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>The URL being visited has no view attached to it, check the URL.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+<td>The HTTP request is using a different method than the one expected by the URL, check to make sure the correct method is used.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>This error usually means there was an exception that was not handled. Check the logs to find the source of the error.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">Files</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>manage.py</code></td>
+<td>This file is used for running Django project commands. Full list can be seen <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#available-commands">here</a></td>
+</tr>
+<tr>
+<td><code>db.sqlite3</code></td>
+<td>This is the database of the project, ideally should not be committed to the repository (this repository does not contain this file). If the file is missing, the project generates it.</td>
+</tr>
+<tr>
+<td><code>requirements.txt</code></td>
+<td>Contains the requirements for the project.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="export">Export</h2>
+<p>Data for the project can be exported in JSON format using the following command:
+<code>python manage.py dumpdata &gt; data.json</code></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+.. include:: ../../README.md
+.. include:: ../README.md
+&#34;&#34;&#34;
+
+import os
+
+if not os.environ.get(&#34;DJANGO_SETTINGS_MODULE&#34;):
+    import django
+
+    os.environ[&#34;DJANGO_SETTINGS_MODULE&#34;] = &#34;url_shortner_server.settings&#34;
+    django.setup()</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="shortner.admin" href="admin.html">shortner.admin</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.apps" href="apps.html">shortner.apps</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.constants" href="constants.html">shortner.constants</a></code></dt>
+<dd>
+<div class="desc"><p>Constants module stores the constants used in the application</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.custom_view" href="custom_view.html">shortner.custom_view</a></code></dt>
+<dd>
+<div class="desc"><p>new_view module defines the NewView view</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.delete_view" href="delete_view.html">shortner.delete_view</a></code></dt>
+<dd>
+<div class="desc"><p>delete_view module defines the view that user wants to delete</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.list_view" href="list_view.html">shortner.list_view</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.login" href="login.html">shortner.login</a></code></dt>
+<dd>
+<div class="desc"><p>update_view module defines the UpdateView view</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.migrations" href="migrations/index.html">shortner.migrations</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.models" href="models.html">shortner.models</a></code></dt>
+<dd>
+<div class="desc"><p>Models module deals with models representing entities in the application</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.new_view" href="new_view.html">shortner.new_view</a></code></dt>
+<dd>
+<div class="desc"><p>new_view module defines the NewView view</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.stats_view" href="stats_view.html">shortner.stats_view</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.stub_view" href="stub_view.html">shortner.stub_view</a></code></dt>
+<dd>
+<div class="desc"><p>stub_view module has views for stub</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.test_view" href="test_view.html">shortner.test_view</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.tests" href="tests/index.html">shortner.tests</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="shortner.update_view" href="update_view.html">shortner.update_view</a></code></dt>
+<dd>
+<div class="desc"><p>update_view module defines the UpdateView view</p></div>
+</dd>
+<dt><code class="name"><a title="shortner.views" href="views.html">shortner.views</a></code></dt>
+<dd>
+<div class="desc"><p>Views module stores all the views of the application</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#url-shortner">URL-Shortner 🔗</a><ul>
+<li><a href="#url-shortner-simple-url-shortener">URL-Shortner - Simple URL shortener</a></li>
+<li><a href="#how-to-use">How to use?</a><ul>
+<li><a href="#install">Install</a></li>
+</ul>
+</li>
+<li><a href="#we-love-our-contributors">We love our contributors ❤️❤️</a></li>
+</ul>
+</li>
+<li><a href="#url-shortner-apis">URL Shortner APIs</a><ul>
+<li><a href="#development">Development</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#files">Files</a></li>
+<li><a href="#export">Export</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="shortner.admin" href="admin.html">shortner.admin</a></code></li>
+<li><code><a title="shortner.apps" href="apps.html">shortner.apps</a></code></li>
+<li><code><a title="shortner.constants" href="constants.html">shortner.constants</a></code></li>
+<li><code><a title="shortner.custom_view" href="custom_view.html">shortner.custom_view</a></code></li>
+<li><code><a title="shortner.delete_view" href="delete_view.html">shortner.delete_view</a></code></li>
+<li><code><a title="shortner.list_view" href="list_view.html">shortner.list_view</a></code></li>
+<li><code><a title="shortner.login" href="login.html">shortner.login</a></code></li>
+<li><code><a title="shortner.migrations" href="migrations/index.html">shortner.migrations</a></code></li>
+<li><code><a title="shortner.models" href="models.html">shortner.models</a></code></li>
+<li><code><a title="shortner.new_view" href="new_view.html">shortner.new_view</a></code></li>
+<li><code><a title="shortner.stats_view" href="stats_view.html">shortner.stats_view</a></code></li>
+<li><code><a title="shortner.stub_view" href="stub_view.html">shortner.stub_view</a></code></li>
+<li><code><a title="shortner.test_view" href="test_view.html">shortner.test_view</a></code></li>
+<li><code><a title="shortner.tests" href="tests/index.html">shortner.tests</a></code></li>
+<li><code><a title="shortner.update_view" href="update_view.html">shortner.update_view</a></code></li>
+<li><code><a title="shortner.views" href="views.html">shortner.views</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
