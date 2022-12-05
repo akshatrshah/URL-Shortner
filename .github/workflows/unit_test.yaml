@@ -11,6 +11,7 @@ on:
 jobs:
   Unit-Tests:
     runs-on: ubuntu-latest
+    services:
       mysql:
         image: mysql:8.0
         env:
@@ -19,6 +20,7 @@ jobs:
         ports:
             - '8888:3306'
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - run: |
            sudo /lib/systemd/systemd-sysv-install enable mysql
@@ -26,9 +28,9 @@ jobs:
            sudo systemctl start mysql.service
            sudo systemctl status mysql.service
 
-      - run: mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS urlshortner;'
-
       - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - run: mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS urlshortner;'
 
       - name: Checkout repository
         uses: actions/checkout@v3
