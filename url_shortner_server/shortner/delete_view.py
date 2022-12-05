@@ -7,10 +7,11 @@ from shortner.models import Link
 import json
 from django.shortcuts import redirect
 
+
 class DeleteView(View):
     """DeleteView is responsible for deletion of the shortened links"""
 
-    def get(self, request: HttpRequest, special_code : str):
+    def get(self, request: HttpRequest, special_code: str):
         """delete handles requests to be deleted /delete"""
         special_codes = special_code
         try:
