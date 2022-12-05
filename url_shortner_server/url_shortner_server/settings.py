@@ -85,7 +85,7 @@ DATABASES = {
         "NAME": "urlshortner",
         "USER": "djangouser",
         "PASSWORD": "password",
-        "HOST": "localhost",
+        "HOST": "127.0.0.1",
         "PORT": "3306",
     }
 }
