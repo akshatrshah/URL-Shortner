@@ -7,9 +7,6 @@ on:
 
 env:
   REGISTRY: 'ghcr.io'
-  DB_DATABASE: urlshortner
-  DB_USER: djangouser
-  DB_PASSWORD: password
 
 jobs:
   build:
@@ -24,9 +21,6 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
-
-      - name: Set up MySQL
-        uses: docker/mysql-action@v3.1
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -51,7 +45,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      - name: Set up MySQL
-        run: |
-          sudo /etc/init.d/mysql start
-          mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
