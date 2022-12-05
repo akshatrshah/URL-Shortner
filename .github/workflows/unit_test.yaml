@@ -67,9 +67,10 @@ jobs:
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
       - name: Run code coverage
+        working-directory: ./url_shortner_server
         run: |
-          coverage run url_shortner_server/manage.py test shortner
-          coverage report --omit=url_shortner_server/shortner/__init__.py
+          coverage run manage.py test shortner
+          coverage report --omit=shortner/__init__.py
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
