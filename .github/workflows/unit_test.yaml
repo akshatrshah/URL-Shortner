@@ -11,15 +11,6 @@ on:
 jobs:
   Unit-Tests:
     runs-on: ubuntu-latest
-
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: zergling
-          MYSQL_DATABASE: mysql
-        ports: ['3306:3306']
-
     steps:
       - run: echo "The job was triggered on branch ${{ github.ref }}."
 
