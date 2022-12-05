@@ -14,9 +14,9 @@ jobs:
     steps:
       - run: echo "Running migrations...."
       - name: Run makemigrations
-        run:  python url_shortner_server/manage.py makemigrations
+        run:  python3 url_shortner_server/manage.py makemigrations
       - name: Run migrate
-        run:  python url_shortner_server/manage.py makemigrate
+        run:  python3 url_shortner_server/manage.py makemigrate
   Unit-Tests:
     runs-on: ubuntu-latest
     steps:
