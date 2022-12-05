@@ -46,7 +46,6 @@ class TestViews(TestCase):
 
         link = give_link_by_username_long_url('akash2', req_long_url)
         assert link.ctr == 1
-
         long_url2 = "https://moodle-courses2223.wolfware.ncsu.edu/gr\
                 ade/report/user/index.php?id=2910"
         http_response = self.client.post(
@@ -71,6 +70,13 @@ class TestViews(TestCase):
             reverse('delete', args=[link.special_code]),
         )
         self.assertEquals(delete_reponse.status_code, 302)
+
+        link = give_link_by_username_long_url('akash2', long_url2)
+        delete_reponse = self.client.get(
+            reverse('delete', args=[link.special_code]),
+        )
+        self.assertEquals(delete_reponse.status_code, 302)
+
         # Verify error in deleting deleted entry
         delete_reponse = self.client.delete(
             reverse('delete', args=[link.special_code]),
