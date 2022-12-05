@@ -30,11 +30,11 @@ jobs:
 
       - run: echo "The job was triggered on branch ${{ github.ref }}."
 
-    - name: Verify MySQL connection from container 
-      run: |
-        apt-get update
-        apt-get install -y mysql-client
-        mysql --host mydb -uroot -ppassword -e "SHOW DATABASES"
+      - name: Verify MySQL connection from container 
+        run: |
+          apt-get update
+          apt-get install -y mysql-client
+          mysql --host mydb -uroot -ppassword -e "SHOW DATABASES"
 
       - name: Checkout repository
         uses: actions/checkout@v3
