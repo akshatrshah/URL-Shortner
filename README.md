@@ -10,16 +10,12 @@
 [![GitHub license](https://img.shields.io/github/license/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)
 
 [![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
-[![codecov](https://codecov.io/gh/CSC510-Group-5/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/CSC510-Group-5/URL-Shortner)
-[![Build and Push WebApp](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml)
-[![CodeQL](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/codeql-analysis.yml)
-[![ESLint](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/eslint.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/eslint.yml)
+[![codecov](https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/AkashSarda3/URL-Shortner)
 [![Generate and Deploy Documentation](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/generate-documentation.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/generate-documentation.yml)
-[![Test & Coverage](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/unit_test.yaml)
+[![Test & Coverage](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/CSC510-Group-5/AkashSarda3/actions/workflows/unit_test.yaml)
 
 [![Documentation Badge](https://img.shields.io/badge/API_Documentation-pdoc-blue.svg)](https://lemon-desert-093c6c80f.2.azurestaticapps.net/)
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
-[![APIs](https://img.shields.io/badge/APIs-postman-orange.svg)](https://www.postman.com/deepmm/workspace/csc510-group-5/collection/2533107-25e62a4e-c150-4277-a4b1-09f84b60c57a?action=share&creator=2533107)
 
 ## URL-Shortner - Simple URL shortener
 

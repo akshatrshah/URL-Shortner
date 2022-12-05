@@ -1,10 +1,10 @@
 name: Test & Coverage
 on:
   push:
-    branches: [ "arvind/fixBuild" ]
+    branches: [ "main" ]
   pull_request:
     branches:
-      - "arvind/fixBuild"
+      - "main"
   workflow_dispatch:
   schedule:
     - cron: '18 18 * * 2'
