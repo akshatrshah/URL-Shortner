@@ -69,7 +69,7 @@ jobs:
       - name: Run code coverage
         working-directory: ./url_shortner_server
         run: |
-          coverage run manage.py test shortner
+          coverage run manage.py test shortner --settings=url_shortner_server.settingtest
           coverage report --omit=shortner/__init__.py
 
       - name: Upload Coverage to Codecov
