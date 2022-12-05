@@ -37,44 +37,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -r url_shortner_server/requirements.txt
-
-      - name: Run makemigrations
-        run:  python3 url_shortner_server/manage.py makemigrations
-        env: 
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: djangouser
-          DBPASSWORD: password
-          DBHOST: 127.0.0.1
-          DBPORT: $
       - name: Run migrate
-        run:  python3 url_shortner_server/manage.py migrate
-        env: 
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: djangouser
-          DBPASSWORD: password
-          DBHOST: 127.0.0.1
-          DBPORT: $
-      - name: Run unit test 1
-        run: python3 url_shortner_server/manage.py test shortner.tests.test_views  --settings=url_shortner_server.settingtest
-        env: 
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: djangouser
-          DBPASSWORD: password
-          DBHOST: 127.0.0.1
-          DBPORT: $
+        run:  python3 url_shortner_server/manage.py migrate --settings=url_shortner_server.settingtest
       - name: Run unit test 2
         run: python3 url_shortner_server/manage.py test shortner.tests.test_urls  --settings=url_shortner_server.settingtest
-        env: 
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: djangouser
-          DBPASSWORD: password
-          DBHOST: 127.0.0.1
-          DBPORT: $
-
+      - name: Run unit test 1
+        run: python3 url_shortner_server/manage.py test shortner.tests.test_views  --settings=url_shortner_server.settingtest
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Angular-Unit-Tests:
     runs-on: ubuntu-latest
