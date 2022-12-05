@@ -24,14 +24,14 @@ jobs:
 
       - name: Set up MySQL
         uses: mirromutth/mysql-action@v1.1
-        with: |
-              host port: 3306 # Optional, default value is 3306. The port of host
-              container port: 3306 # Optional, default value is 3306. The port of container
-              mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
-              mysql database: 'urlshortner' # Optional, default value is "test". The specified database which will be create
-              mysql root password: 'password' # Required if "mysql user" is empty, default is empty. The root superuser password
-              mysql user: 'djangouser' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
-              mysql password: 'password' # Required if "mysql user" exists. The password for the "mysql user"
+        with:
+          host port: 3306 # Optional, default value is 3306. The port of host
+          container port: 3306 # Optional, default value is 3306. The port of container
+          mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
+          mysql database: 'urlshortner' # Optional, default value is "test". The specified database which will be create
+          mysql root password: 'password' # Required if "mysql user" is empty, default is empty. The root superuser password
+          mysql user: 'djangouser' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
+          mysql password: 'password' # Required if "mysql user" exists. The password for the "mysql user"
 
       - name: Start Ubuntu MySQL (SUDO)
       - run: |
