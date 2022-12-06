@@ -46,7 +46,7 @@ If you answered yes to any of the above questions, then this is going to bring a
 The URL-Shortner is a simple tool that you can utilize to create short versions of that long urls and share it with others. Additionally, its just a few clicks to update an existing URL if you made a mistake or the URL has changes over time. If you don't need it anymore, simply go ahead and delete that.
 
 
-![Group 16 URL Shortner Video](https://user-images.githubusercontent.com/112050088/205785645-c98b3211-18ce-482b-aab8-4f6aaffb1400.mp4)
+https://user-images.githubusercontent.com/112050088/205785645-c98b3211-18ce-482b-aab8-4f6aaffb1400.mp4
 
 
 URL-Shortner has APIs developed using python and front-end web application developed using angular.
