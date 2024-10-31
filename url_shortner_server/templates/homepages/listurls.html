@@ -110,8 +110,12 @@
                       </div>
                   </div>
                   <div class="primary-btn text-center">
-                      <a href="/homepage/Prerak" class="btn btn-primary">Create a new Url</a>
-                  </div>
+                    <a href="/homepage/Prerak" class="btn btn-primary">Create a new Url</a>
+                    <form action="{% url 'delete_all_urls' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete All URLs</button>
+                    </form>
+                </div>
               </div>
               <!-- /col end-->
           </div>
