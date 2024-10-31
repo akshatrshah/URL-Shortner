@@ -16,31 +16,6 @@
 </head>
 
 <style>
-<<<<<<< Updated upstream
-  body,
-  html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    padding-bottom: 0px;
-  }
-
-  main {
-    flex: 1;
-  }
-
-
-  button[type = button] {
-    background: var(--color-primary);
-    border: 0;
-    padding: 10px 30px;
-    color: #fff;
-    transition: 0.4s;
-    cursor: pointer;
-  }
-=======
     button[type = button] {
   background: var(--color-primary);
   border: 0;
@@ -49,7 +24,6 @@
   transition: 0.4s;
   cursor: pointer;
 }
->>>>>>> Stashed changes
 
 button[type = button]:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
@@ -64,6 +38,8 @@ button[type = button]:hover {
       font-family: 'Inter', sans-serif;
       color: #444; /* Default text color */
       background-color: #fafafa; /* Light background color for overall page */
+      padding-bottom: 0px;
+      
     }
     main {
       flex: 1;
@@ -148,17 +124,13 @@ button[type = button]:hover {
       background: rgba(255, 99, 71, 0.9);
       transform: translateY(-2px); /* Lift effect on hover */
     }
-  </style>
-</head>
+
+</style>
 
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-<<<<<<< Updated upstream
       <h1> Welcome, {{userFname}}</h1>
-=======
-      <h1>Welcome, {{userFname}}</h1>
->>>>>>> Stashed changes
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{% url 'about_us' %}">Home</a></li>
@@ -223,8 +195,7 @@ button[type = button]:hover {
     </div>
   </footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- JavaScript to handle file upload display -->
   <script>
