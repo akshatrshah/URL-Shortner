@@ -51,7 +51,22 @@
       font-size: 2em; /* Increased size for emphasis */
     }
     .navbar {
-      display: flex;
+      display: flex; /* Use flexbox */
+      align-items: center; /* Center align items vertically */
+      justify-content: space-between; /* Space between items */
+      width: 100%;
+    }
+    .nav-links {
+        flex: 1; /* Allow this to grow and fill space */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center items in the nav */
+    }
+    .nav-links ul {
+        list-style: none; /* Remove bullet points */
+        display: flex; /* Use flexbox for horizontal alignment */
+        gap: 3em; /* Spacing between links */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
     }
     .navbar ul {
       list-style: none;
@@ -78,6 +93,22 @@
       text-decoration: none;
       transition: color 0.3s ease;
     }
+    .sign-out-container {
+    margin-left: auto; /* Push the Sign Out button to the right */
+}
+
+.sign-out-container a {
+    color: #333; /* Set color for the link */
+    font-weight: 600; /* Make the font bold */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add some padding */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.sign-out-container a:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
     .header a:hover {
       color: #ff6347; /* Highlight on hover */
     }
@@ -122,15 +153,20 @@
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <h1>Welcome, {{userFname}}</h1>
+      <!-- <h1>Welcome, {{userFname}}</h1> -->
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{% url 'about_us' %}">Home</a></li>
-          <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
-          <li><a href="{% url 'stats' %}">Statistics</a></li>
-        </ul>
-      </nav>
-      <a href="/signout">Sign Out</a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'about_us' %}">Home</a></li>
+                <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
+                <li><a href="{% url 'stats' %}">Statistics</a></li>
+            </ul>
+        </div>
+        <div class="sign-out-container">
+            <a href="/signout">Sign Out</a>
+        </div>
+    </nav>  
+      
     </div>
   </header>
 
@@ -182,7 +218,8 @@
                     <a href="{% url 'index' %}" class="btn btn-primary">Create a new Url</a>
                     <form action="{% url 'delete_all_urls' %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Delete All URLs</button>
+                      
+                        <button type="submit" class="btn btn-primary">Delete All URLs</button>
                     </form>
                 </div>
               </div>

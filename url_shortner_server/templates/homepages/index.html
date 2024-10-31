@@ -61,7 +61,22 @@ button[type = button]:hover {
       font-size: 2em; /* Increased size for emphasis */
     }
     .navbar {
-      display: flex;
+      display: flex; /* Use flexbox */
+      align-items: center; /* Center align items vertically */
+      justify-content: space-between; /* Space between items */
+      width: 100%;
+    }
+    .nav-links {
+        flex: 1; /* Allow this to grow and fill space */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center items in the nav */
+    }
+    .nav-links ul {
+        list-style: none; /* Remove bullet points */
+        display: flex; /* Use flexbox for horizontal alignment */
+        gap: 3em; /* Spacing between links */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
     }
     .navbar ul {
       list-style: none;
@@ -81,6 +96,21 @@ button[type = button]:hover {
       color: #ff6347; /* Change to a vibrant color on hover */
       text-decoration: underline; /* Underline effect on hover */
     }
+    .sign-out-container {
+    margin-left: auto; /* Push the Sign Out button to the right */
+}
+
+.sign-out-container a {
+    color: #333; /* Set color for the link */
+    font-weight: 600; /* Make the font bold */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add some padding */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.sign-out-container a:hover {
+    color: #ff6347; /* Change color on hover */
+}
     .header a {
       color: #333; /* Dark text color for links */
       font-weight: 600;
@@ -134,13 +164,18 @@ button[type = button]:hover {
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <h1> Welcome, {{userFname}}</h1>
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{% url 'about_us' %}">Home</a></li>
-          <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
-          <li><a href="{% url 'stats' %}">Statistics</a></li>
-        </ul>
-      </nav>
-      <a href="/signout">Sign Out</a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'about_us' %}">Home</a></li>
+                <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
+                <li><a href="{% url 'stats' %}">Statistics</a></li>
+            </ul>
+        </div>
+        <div class="sign-out-container">
+            <a href="/signout">Sign Out</a>
+        </div>
+    </nav>  
+      
     </div>
   </header>
 
