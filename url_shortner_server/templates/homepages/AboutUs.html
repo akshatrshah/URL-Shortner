@@ -10,55 +10,169 @@
   <link rel="stylesheet" href="{% static 'style.css' %}">
   <link rel="stylesheet" href="{% static 'homemain.css' %}">
   <link rel="stylesheet" href="{% static 'colors.css' %}">
+  <style>
+/* Global Styles */
+
+ body, html {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #444; /* Default text color */
+      background-color: #fafafa; /* Light background color for overall page */
+    }
+    main {
+      flex: 1;
+    }
+
+    /* Header and Navbar Styling */
+    .header {
+      background: #ffffff; /* Light background for the navbar */
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease; /* Smooth transition */
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #333; /* Dark text for better contrast */
+      margin: 0;
+      font-size: 2em; /* Increased size for emphasis */
+    }
+    .navbar {
+      display: flex;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 3em; /* More spacing for better visibility */
+      margin: 0;
+      padding: 0;
+    }
+    .navbar li a {
+      color: #555; /* Darker for good contrast */
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.5rem 0; /* Added vertical padding */
+      transition: color 0.3s;
+    }
+    .navbar li a:hover {
+      color: #ff6347; /* Change to a vibrant color on hover */
+      text-decoration: underline; /* Underline effect on hover */
+    }
+    .header a {
+      color: #333; /* Dark text color for links */
+      font-weight: 600;
+      margin-left: 2em; /* Spacing for clarity */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .header a:hover {
+      color: #ff6347; /* Highlight on hover */
+    }
+
+    /* Jumbotron Styling */
+    .jumbotron {
+      padding: 5em 2em; /* Increased padding for a spacious feel */
+      background: linear-gradient(
+        to right, 
+        rgba(255, 105, 180, 0.8),  
+        rgba(255, 165, 0, 0.8),    
+        rgba(0, 128, 255, 0.8),    
+        rgba(60, 179, 113, 0.8)    
+      ), 
+      url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
+      color: white;
+      text-align: center;
+      border-radius: 8px; /* Rounded corners for jumbotron */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .jumbotron h1 {
+      font-size: 3.5em; /* Increased size for emphasis */
+      margin-bottom: 0.5em;
+    }
+    .jumbotron p {
+      font-size: 1.5em; /* Larger text for readability */
+      margin-bottom: 1em;
+    }
+    .jumbotron .btn {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.75em 2.5em; /* Increased padding for better clickability */
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px; /* Slightly rounded corners for buttons */
+      transition: background 0.3s ease, transform 0.2s; /* Smooth transitions */
+    }
+    .jumbotron .btn:hover {
+      background: rgba(255, 99, 71, 0.9);
+      transform: translateY(-2px); /* Lift effect on hover */
+    }
+
+    /* About Section Styles */
+    #about {
+      padding: 4em 2em; /* More padding for spaciousness */
+      background: #ffffff; /* Light background for contrast */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px; /* Rounded corners for about section */
+      margin: 2em; /* Margin to separate from edges */
+    }
+    #about h2 {
+      margin-top: 0; /* Remove default margin for alignment */
+      font-size: 2.5em; /* Larger title for emphasis */
+      color: #333; /* Dark color for better visibility */
+    }
+    #about p {
+      font-size: 1.2em; /* Slightly larger text for readability */
+      line-height: 1.6; /* Improved line height for readability */
+      margin-bottom: 1em;
+      color: #555; /* Dark gray for softer contrast */
+    }
+    #about ul {
+      margin-top: 1em; /* Space above the list */
+      list-style: disc; /* Bullet points for clarity */
+      padding-left: 1.5em; /* Indentation for bullet points */
+    }
+    #about ul li {
+      margin-bottom: 0.5em; /* Spacing between list items */
+    }
+
+    /* Footer Styling */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+    }
+    .footer span {
+      color: #e25555;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      background: #ff6347; /* Color of scroll button */
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+      z-index: 1000; /* Ensure button is above other elements */
+    }
+    .scroll-top:hover {
+      background: rgba(255, 99, 71, 0.9);
+      transform: translateY(-2px); /* Lift effect on hover */
+    }
+  </style>
 </head>
-
-<style>
-  body, html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    padding-bottom: 0px;
-  }
-  main {
-    flex: 1;
-  }
-
-  .jumbotron {
-    padding: 4em 2em;
-    background: linear-gradient(
-    to right, 
-    rgba(255, 105, 180, 0.8),  /* Light pink */
-    rgba(255, 165, 0, 0.8),    /* Orange */
-    rgba(0, 128, 255, 0.8),    /* Light blue */
-    rgba(60, 179, 113, 0.8)    /* Medium sea green */
-), 
-url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
-
-    color: white;
-    text-align: center;
-  }
-  .jumbotron h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-  }
-  .jumbotron p {
-    font-size: 1.25em;
-    margin-bottom: 1em;
-  }
-  .jumbotron .btn {
-    background: var(--color-primary);
-    color: #fff;
-    padding: 0.75em 2em;
-    font-size: 1.2em;
-    border: none;
-    transition: background 0.3s ease;
-  }
-  .jumbotron .btn:hover {
-    background: rgba(var(--color-primary-rgb), 0.8);
-  }
-</style>
 
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -66,22 +180,22 @@ url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
       <h1>Welcome, {{userFname}}</h1>
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a href="{% url 'about_us' %}">Home</a></li>
-          <li><a href="/list">Manage Your Urls</a></li>
-          <li><a href="/stats">Statistics</a></li>
+          <li><a href="{% url 'about_us' %}">Home</a></li>
+          <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
+          <li><a href="{% url 'stats' %}">Statistics</a></li>
         </ul>
       </nav>
       <a href="/signout">Sign Out</a>
     </div>
   </header>
-
+  
   <main id="main">
     <!-- Jumbotron Section -->
     <section class="jumbotron">
       <div class="container">
         <h1>Welcome to Our URL Shortener</h1>
         <p>Simplify your links and make them easier to share! Start creating short, memorable links that make navigation and tracking a breeze.</p>
-        <a href="/homepage/Prerak" class="btn btn-primary">Create a new Url</a>
+        <a href="{% url 'index' %}" class="btn btn-primary">Create a new Url</a>
       </div>
     </section>
 
@@ -105,10 +219,11 @@ url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
 
   <footer id="footer" class="footer">
     <div class="container">
-      <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
+      <p>Made with <span>&hearts;</span> by Team 5 and Team 16</p>
     </div>
   </footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
+  <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 </body>
 </html>
