@@ -18,53 +18,118 @@
 </head>
 
 <style>
-  /* Apply flex layout to the body to ensure footer sticks to the bottom */
-  body, html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    padding-bottom: 0px;
-  }
+ /* Global Styles */
 
-  /* Main content should take up remaining space */
-  main {
-    flex: 1;
-  }
+ body, html {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #444; /* Default text color */
+      background-color: #fafafa; /* Light background color for overall page */
+    }
+    main {
+      flex: 1;
+    }
 
-  /* Footer styling */
-  .footer {
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
-  }
-</style>
+    /* Header and Navbar Styling */
+    .header {
+      background: #ffffff; /* Light background for the navbar */
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease; /* Smooth transition */
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #333; /* Dark text for better contrast */
+      margin: 0;
+      font-size: 2em; /* Increased size for emphasis */
+    }
+    .navbar {
+      display: flex;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 3em; /* More spacing for better visibility */
+      margin: 0;
+      padding: 0;
+    }
+    .navbar li a {
+      color: #555; /* Darker for good contrast */
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.5rem 0; /* Added vertical padding */
+      transition: color 0.3s;
+    }
+    .navbar li a:hover {
+      color: #ff6347; /* Change to a vibrant color on hover */
+      text-decoration: underline; /* Underline effect on hover */
+    }
+    .header a {
+      color: #333; /* Dark text color for links */
+      font-weight: 600;
+      margin-left: 2em; /* Spacing for clarity */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .header a:hover {
+      color: #ff6347; /* Highlight on hover */
+    }
+
+    /* Footer Styling */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+    }
+    .footer span {
+      color: #e25555;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      background: #ff6347; /* Color of scroll button */
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+      z-index: 1000; /* Ensure button is above other elements */
+    }
+    .scroll-top:hover {
+      background: rgba(255, 99, 71, 0.9);
+      transform: translateY(-2px); /* Lift effect on hover */
+    }
+  </style>
+</head>
 
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <h1>Welcome, {{ userFname }}</h1>
+      <h1>Welcome, {{userFname}}</h1>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{% url 'about_us' %}">Home</a></li>
-          <li><a href="/list">Manage Your URLs</a></li>
-          <li><a href="/stats">Statistics</a></li>
+          <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
+          <li><a href="{% url 'stats' %}">Statistics</a></li>
         </ul>
       </nav>
-      <div class="position-relative">
-        <a href="#" class="mx-2 js-search-open"><span class="fa fa-search"></span></a>
-        <div class="search-form-wrap js-search-form-wrap">
-          <form action="search-result.html" class="search-form">
-            <span class="icon fa fa-search"></span>
-            <input type="text" placeholder="Search" class="form-control">
-            <button type="button" class="btn js-search-close"><span class="fa fa-times"></span></button>
-          </form>
-        </div>
-      </div>
+      <a href="/signout">Sign Out</a>
     </div>
   </header>
+
   <main id="main">
     <div class="event-schedule-area-two bg-color pad100">
       <div class="container">

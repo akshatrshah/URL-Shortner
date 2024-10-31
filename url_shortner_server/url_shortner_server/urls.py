@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from shortner.views import NewView, StubView, UpdateView, DeleteView, delete_all_urls
-from shortner.views import CustomView, home, signin, signout, signup, about_us
+from shortner.views import CustomView, home, signin, signout, signup, about_us, create_url
 from shortner.views import login_test, ListUrlsView, homepage, StatsView
 
 urlpatterns = [
@@ -37,6 +37,7 @@ urlpatterns = [
     path('signin', signin, name="signin"),
     path('signout', signout, name="signout"),
     path('about-us/', about_us, name='about_us'),
+    path('index/', create_url, name = 'index'),
     # re_path(r'homepage/(?P<fname>[\w-]+)/$', homepage, name='homepage' ),
     path('homepage/<str:fname>', homepage, name='homepage')
 ]
