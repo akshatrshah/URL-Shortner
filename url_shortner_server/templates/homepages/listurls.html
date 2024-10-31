@@ -7,10 +7,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
+  <!-- Preconnect for Fonts and Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'style.css' %}">
   <link rel="stylesheet" href="{% static 'homemain.css' %}">
   <link rel="stylesheet" href="{% static 'colors.css' %}">
@@ -176,7 +179,7 @@
                       </div>
                   </div>
                   <div class="primary-btn text-center">
-                    <a href="/homepage/Prerak" class="btn btn-primary">Create a new Url</a>
+                    <a href="{% url 'index' %}" class="btn btn-primary">Create a new Url</a>
                     <form action="{% url 'delete_all_urls' %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Delete All URLs</button>
@@ -194,15 +197,11 @@
   <!-- Footer -->
   <footer id="footer" class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
-        </div>
-      </div>
+      <p>Made with <span>&hearts;</span> by Team 5 and Team 16</p>
     </div>
   </footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
 
 </body>
 
