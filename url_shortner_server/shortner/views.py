@@ -18,11 +18,13 @@ __all__ = ["NewView", "StubView", "UpdateView", "DeleteView",
 
 
 def home(request):
+    """home view"""
     print("hitting home")
     return render(request, "authentication/index.html")
 
 
 def signup(request):
+    """signup view"""
     if request.method == "POST":
         # requestJsonBody = json.loads(request)
         uservalue = request.POST["username"]
@@ -64,6 +66,7 @@ def signup(request):
 
 
 def signin(request):
+    """signin view"""
 
     # Only through forms
     if request.method == "POST":
@@ -84,15 +87,17 @@ def signin(request):
 
 
 def homepage(request, fname):
+    """homepage view"""
     if (request.method == 'GET'):
         messages.success(request, "Login Successfull!")
-        print("{} has logged in".format(fname))
+        print(f"{fname} has logged in")
         args = {}
         args['userFname'] = fname
         return render(request, 'homepages/index.html', args)
 
 
 def signout(request):
+    """signout view"""
     logout(request)
     messages.success(request, "Logged Out Successfully!")
     return redirect("home")
