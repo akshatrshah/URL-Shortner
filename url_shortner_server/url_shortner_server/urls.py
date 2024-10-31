@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shortner.views import NewView, StubView, UpdateView, DeleteView
+from shortner.views import NewView, StubView, UpdateView, DeleteView, delete_all_urls
 from shortner.views import CustomView, home, signin, signout, signup, about_us
 from shortner.views import login_test, ListUrlsView, homepage, StatsView
 
@@ -24,6 +24,7 @@ urlpatterns = [
     # homepage/new to get it as post message in homepage. Figure it out later.
     path('new', NewView.as_view(), name='add_new'),
     path("delete/<slug:special_code>", DeleteView.as_view(), name='delete'),
+    path('delete_all/', delete_all_urls, name='delete_all_urls'),
     path("stub/<slug:stub>/", StubView.as_view(), name='stub'),
     path("update/", UpdateView.as_view(), name='update'),
     path("custom/", CustomView.as_view(), name='custom'),
