@@ -15,7 +15,7 @@ class StatsView(View):
         context = dict()
         if username == '':
             redirect('signin')
-        list_of_links = Link.objects.filter(username=username)
+        list_of_links = Link.objects.filter(username=username).order_by('-ctr')
         context['list_of_links'] = []
         for linkObj in list_of_links:
             x = dict()
