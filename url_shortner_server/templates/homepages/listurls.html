@@ -16,29 +16,53 @@
   <link rel="stylesheet" href="{% static 'colors.css' %}">
 
 </head>
+
+<style>
+  /* Apply flex layout to the body to ensure footer sticks to the bottom */
+  body, html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0px;
+  }
+
+  /* Main content should take up remaining space */
+  main {
+    flex: 1;
+  }
+
+  /* Footer styling */
+  .footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+</style>
+
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <h1> Welcome,  {{userFname}}</h1>
+      <h1>Welcome, {{ userFname }}</h1>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/list">Manage Your Urls</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/list">Manage Your URLs</a></li>
           <li><a href="/stats">Statistics</a></li>
         </ul>
       </nav>
       <div class="position-relative">
-        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <a href="#" class="mx-2 js-search-open"><span class="fa fa-search"></span></a>
         <div class="search-form-wrap js-search-form-wrap">
           <form action="search-result.html" class="search-form">
-            <span class="icon bi-search"></span>
+            <span class="icon fa fa-search"></span>
             <input type="text" placeholder="Search" class="form-control">
-            <button class="btn js-search-close"><span class="bi-x"></span></button>
+            <button type="button" class="btn js-search-close"><span class="fa fa-times"></span></button>
           </form>
         </div>
       </div>
-      <a href="/signout">Sign Out</a>
     </div>
   </header>
   <main id="main">
@@ -96,13 +120,13 @@
   </div>
   </main>
 
-  <footer id="footer" class="site-footer footer">
-    <div class="site-footer footer-content">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-4">
-            <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
-          </div>
+  
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
         </div>
       </div>
     </div>

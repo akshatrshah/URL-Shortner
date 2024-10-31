@@ -1,21 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="{% static 'style.css' %}">
   <link rel="stylesheet" href="{% static 'homemain.css' %}">
   <link rel="stylesheet" href="{% static 'colors.css' %}">
-
 </head>
+
+<style>
+  body, html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0px;
+  }
+  main {
+    flex: 1;
+  }
+  button[type=button] {
+  background: var(--color-primary);
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+button[type=button]:hover {
+  background: rgba(var(--color-primary-rgb), 0.8);
+}
+
+  .footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+</style>
+
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -27,7 +56,6 @@
           <li><a href="/stats">Statistics</a></li>
         </ul>
       </nav>
-
       <div class="position-relative">
         <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -42,40 +70,47 @@
       <a href="/signout">Sign Out</a>
     </div>
   </header>
+
   <main id="main">
     <section id="contact" class="contact mb-5">
       <div class="container" data-aos="fade-up">
         <div class="form mt-5">
-          <form method="post" role="form" class="php-email-form" action="/new">
+          <form method="post" role="form" class="php-email-form" action="/new" enctype="multipart/form-data">
             <div class="form-group">
               <input type="text" class="form-control" name="long-url" id="long-url" placeholder="Long-Url" required>
             </div>
 
             <div class="custom-field">
               <div class="radio">
-                  <span class="label">Do you want to provide custom url stub? (STUB_LENGTH is 10)</span>
-                  <div id="field_8"><label><input type="radio" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl').style.display='block'"> Yes</label><label><input type="radio" name="field_8" id="option_10" value="No" onclick="document.getElementById('divUrl').style.display='none'"> No</label></div>
+                <span class="label">Do you want to provide custom url stub? (STUB_LENGTH is 10)</span>
+                <div id="field_8">
+                  <label><input type="radio" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl').style.display='block'"> Yes</label>
+                  <label><input type="radio" name="field_8" id="option_10" value="No" onclick="document.getElementById('divUrl').style.display='none'"> No</label>
+                </div>
               </div>
-              </div>
-              
-              <div class="custom-field" id="divUrl" style="display:none">
-                <input type="text" class="form-control" name="custom-stub" id="custom-stub" placeholder="Custom-stub" />
-              </div>
-              
-            <div class="text-center"><button type="submit">Generate</button></div>
+            </div>
+
+            <div class="custom-field" id="divUrl" style="display:none">
+              <input type="text" class="form-control" name="custom-stub" id="custom-stub" placeholder="Custom-stub" />
+            </div>
+
+            <!-- Upload Button and File Input -->
+            <div class="text-center">
+              <button type="submit">Generate</button>
+              <button type="button" onclick="toggleFileUpload()">Upload CSV</button>
+              <input type="file" name="file" id="file-upload" accept=".csv" style="display:none;" onchange="removeTextarea()">
+            </div>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="footer" class="site-footer footer">
-    <div class="site-footer footer-content">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-4">
-            <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
-          </div>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
         </div>
       </div>
     </div>
@@ -83,6 +118,16 @@
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-</body>
+  <!-- JavaScript to handle file upload display -->
+  <script>
+    function toggleFileUpload() {
+      const fileUpload = document.getElementById('file-upload');
+      fileUpload.style.display = fileUpload.style.display === 'none' ? 'block' : 'none';
+    }
 
+    function removeTextarea() {
+      document.getElementById('long-url').style.display = 'none';
+    }
+  </script>
+</body>
 </html>
