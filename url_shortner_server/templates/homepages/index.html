@@ -24,7 +24,8 @@
   main {
     flex: 1;
   }
-  button[type=button] {
+
+  button[type = button] {
   background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
@@ -33,7 +34,7 @@
   cursor: pointer;
 }
 
-button[type=button]:hover {
+button[type = button]:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
 }
 
@@ -51,7 +52,7 @@ button[type=button]:hover {
       <h1> Welcome,  {{userFname}}</h1>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="{% url 'about_us' %}">Home</a></li>
           <li><a href="/list">Manage Your Urls</a></li>
           <li><a href="/stats">Statistics</a></li>
         </ul>
