@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'homemain.css' %}">
+  <link rel="stylesheet" href="{% static 'colors.css' %}">
+</head>
+
+<style>
+  body, html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0px;
+  }
+  main {
+    flex: 1;
+  }
+
+  .jumbotron {
+    padding: 4em 2em;
+    background: linear-gradient(
+    to right, 
+    rgba(255, 105, 180, 0.8),  /* Light pink */
+    rgba(255, 165, 0, 0.8),    /* Orange */
+    rgba(0, 128, 255, 0.8),    /* Light blue */
+    rgba(60, 179, 113, 0.8)    /* Medium sea green */
+), 
+url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
+
+    color: white;
+    text-align: center;
+  }
+  .jumbotron h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+  .jumbotron p {
+    font-size: 1.25em;
+    margin-bottom: 1em;
+  }
+  .jumbotron .btn {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75em 2em;
+    font-size: 1.2em;
+    border: none;
+    transition: background 0.3s ease;
+  }
+  .jumbotron .btn:hover {
+    background: rgba(var(--color-primary-rgb), 0.8);
+  }
+</style>
+
+<body>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <h1>Welcome, {{userFname}}</h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a href="{% url 'about_us' %}">Home</a></li>
+          <li><a href="/list">Manage Your Urls</a></li>
+          <li><a href="/stats">Statistics</a></li>
+        </ul>
+      </nav>
+      <a href="/signout">Sign Out</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Jumbotron Section -->
+    <section class="jumbotron">
+      <div class="container">
+        <h1>Welcome to Our URL Shortener</h1>
+        <p>Simplify your links and make them easier to share! Start creating short, memorable links that make navigation and tracking a breeze.</p>
+        <a href="/homepage/Prerak" class="btn btn-primary">Create a new Url</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about py-5">
+      <div class="container">
+        <h2>About Our Project</h2>
+        <p>
+          Our URL shortener project is designed to transform long and unwieldy links into concise, easy-to-share URLs. Perfect for social media, marketing campaigns, and more, our tool provides a seamless experience with real-time analytics and tracking.
+        </p>
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Customizable URL Stubs:</strong> Personalize each short URL with your choice of text.</li>
+          <li><strong>URL Analytics:</strong> Gain insights on link clicks, geographic data, and other metrics to optimize your marketing strategy.</li>
+          <li><strong>Bulk URL Upload:</strong> Save time by uploading multiple URLs at once in CSV format.</li>
+          <li><strong>Secure and Reliable:</strong> Our shortener ensures secure, encrypted URL management.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</body>
+</html>
