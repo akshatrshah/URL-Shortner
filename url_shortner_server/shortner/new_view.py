@@ -11,7 +11,6 @@ class NewView(View):
 
     def post(self, request: HttpRequest):
         """Create a new link"""
-        print("recerived new request hahahaha --------------------------------", request.body)
         username = request.session.get('username')
         if not username:
             return redirect('signin')
@@ -60,8 +59,5 @@ class NewView(View):
                     link.save_custom(custom_stub)
                 else:
                     link.save()
-
-            print("entered file conditions")
-            print("file name is:", request.FILES)
 
         return redirect('list')
