@@ -1,19 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{% static 'style.css' %}">
   <link rel="stylesheet" href="{% static 'homemain.css' %}">
   <link rel="stylesheet" href="{% static 'colors.css' %}">
 </head>
 
 <style>
-  body, html {
+  body,
+  html {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -21,18 +25,20 @@
     font-family: 'Inter', sans-serif;
     padding-bottom: 0px;
   }
+
   main {
     flex: 1;
   }
 
+
   button[type = button] {
-  background: var(--color-primary);
-  border: 0;
-  padding: 10px 30px;
-  color: #fff;
-  transition: 0.4s;
-  cursor: pointer;
-}
+    background: var(--color-primary);
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+  }
 
 button[type = button]:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
@@ -49,7 +55,7 @@ button[type = button]:hover {
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <h1> Welcome,  {{userFname}}</h1>
+      <h1> Welcome, {{userFname}}</h1>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{% url 'about_us' %}">Home</a></li>
@@ -85,8 +91,10 @@ button[type = button]:hover {
               <div class="radio">
                 <span class="label">Do you want to provide custom url stub? (STUB_LENGTH is 10)</span>
                 <div id="field_8">
-                  <label><input type="radio" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl').style.display='block'"> Yes</label>
-                  <label><input type="radio" name="field_8" id="option_10" value="No" onclick="document.getElementById('divUrl').style.display='none'"> No</label>
+                  <label><input type="radio" name="field_8" id="option_9" value="Yes"
+                      onclick="document.getElementById('divUrl').style.display='block'"> Yes</label>
+                  <label><input type="radio" name="field_8" id="option_10" value="No"
+                      onclick="document.getElementById('divUrl').style.display='none'"> No</label>
                 </div>
               </div>
             </div>
@@ -95,12 +103,17 @@ button[type = button]:hover {
               <input type="text" class="form-control" name="custom-stub" id="custom-stub" placeholder="Custom-stub" />
             </div>
 
-            <!-- Upload Button and File Input -->
-            <div class="text-center">
-              <button type="submit">Generate</button>
-              <button type="button" onclick="toggleFileUpload()">Upload CSV</button>
-              <input type="file" name="file" id="file-upload" accept=".csv" style="display:none;" onchange="removeTextarea()">
-            </div>
+            <form action="{% url 'add_new' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <!-- Upload Button and File Input -->
+              <div class="text-center">
+                <button type="submit">Generate</button>
+                <button type="button" onclick="toggleFileUpload()">Upload CSV</button>
+                <input type="file" name="file" id="file-upload" accept=".csv" style="display:none;"
+                  onchange="removeTextarea()">
+              </div>
+            </form>
           </form>
         </div>
       </div>
@@ -117,18 +130,32 @@ button[type = button]:hover {
     </div>
   </footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- JavaScript to handle file upload display -->
   <script>
-    function toggleFileUpload() {
-      const fileUpload = document.getElementById('file-upload');
-      fileUpload.style.display = fileUpload.style.display === 'none' ? 'block' : 'none';
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        function toggleFileUpload() {
+            const fileUpload = document.getElementById('file-upload');
+            const longUrlField = document.getElementById('long-url');
+
+            if (fileUpload.style.display === 'none') {
+                fileUpload.style.display = 'block';
+                longUrlField.removeAttribute('required');
+            } else {
+                fileUpload.style.display = 'none';
+                longUrlField.setAttribute('required', '');
+            }
+        }
+
+        window.toggleFileUpload = toggleFileUpload; // Attach function to the window object
+    });
 
     function removeTextarea() {
       document.getElementById('long-url').style.display = 'none';
     }
   </script>
 </body>
+
 </html>
