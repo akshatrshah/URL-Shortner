@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from shortner.views import NewView, StubView, UpdateView, DeleteView
-from shortner.views import CustomView, home, signin, signout, signup
+from shortner.views import CustomView, home, signin, signout, signup, about_us
 from shortner.views import login_test, ListUrlsView, homepage, StatsView
 
 urlpatterns = [
@@ -35,6 +34,7 @@ urlpatterns = [
     path('signup', signup, name="signup"),
     path('signin', signin, name="signin"),
     path('signout', signout, name="signout"),
+    path('about-us/', about_us, name='about_us'),
     # re_path(r'homepage/(?P<fname>[\w-]+)/$', homepage, name='homepage' ),
     path('homepage/<str:fname>', homepage, name='homepage')
 ]
