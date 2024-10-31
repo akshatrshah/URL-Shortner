@@ -97,6 +97,7 @@ def homepage(request, fname):
 
 
 def about_us(request):
+    """home landing page"""
     return render(request, 'homepages/AboutUs.html')  # Make sure the path matches your file's location
 
 
