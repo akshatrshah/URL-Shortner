@@ -43,7 +43,8 @@ If any of this sounds familiar, URL-Shortner is here to help! Designed for simpl
 
 If you answered yes to any of the above questions, URL-Shortner is here to simplify your URL management! With this tool, you can create short, memorable links that are easy to share and update as needed. Want to personalize your links? Add custom stubs to make URLs align with your brand. Plus, track link performance with analytics to understand your audience, or upload multiple links at once to manage them all from one place. Whether you’re looking to customize, analyze, or bulk-manage URLs, URL-Shortner has you covered!
 
-https://app.animaker.com/video/YRI3ZZF3TSC7QHO5
+
+https://github.com/user-attachments/assets/851e115f-19e7-43c7-9f98-48b024901422
 
 ---
 🚀 Key Features
