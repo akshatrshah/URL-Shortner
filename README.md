@@ -23,33 +23,33 @@
 
 ## URL-Shortner - Simple URL shortener
 
-Hi! We are Group 16 and we bring to you the new URL Shortner. While Group-5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
+Hi! We are Group 16 and we bring to you the new URL Shortner. While Group 5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
 
 We enhanced the UI and we enhanced the user experience!
-We added a feature to login/signup and create your own URLs! That's right now own those URLs garunteeing management of your URL is safe and cannot be updated by anyone else.
-We know why you use a URL shortner, you need to share links and you need to see how your customers are doing. We added some analytics to show how much your customers are user links!
-Last but none of the least, you do not want to use the boring URLs that URL Shortner gives you? We bring to you the custom url feature!
-You can create Custom Short Urls of your choice! Designed by you!
+We added a feature to login/sign up and create your own URLs! That's right now own those URLs guaranteeing management of your URL is safe and cannot be updated by anyone else.
+We know why you use a URL shortner, you need to share links and you need to see how your customers are doing. We added some analytics to show how much your customers are using links!
+Last but none of least, you do not want to use the boring URLs that URL Shortner gives you. We bring to you the custom URL feature!
+You can create Custom Short URLs of your choice! Designed by you!
 Your customers will surely love it!
 
 
-Wondering why the Shortner is misspelled? Thats because this project is all about making it short, simple and easy to share.
-URL-Shortner aims to be the easiest ad-free url shortener that can be used to quickly generate sharable short urls.
+Wondering why the Shortner is misspelled? That's because this project is all about making it short, simple, and easy to share.
+URL-Shortner aims to be the easiest ad-free URL shortener that can be used to quickly generate sharable short urls.
 
-- Ever typed out a long url on your phone only to see that you missed a '/' or misspelled a word?
+- You ever typed out a long URL on your phone only to see that you missed a '/' or misspelled a word?
 
 - Have you shared multiple URLs with others because you sent an incorrect URL earlier?
 
-- Had to update the same document every year but with updated URL, wondering if there was a way to keep the URL the same and just redirect to new one every year?
+- You had to update the same document every year but with an updated URL, wondering if there was a way to keep the URL the same and just redirect to a new one every year?
 
-If you answered yes to any of the above questions, then this is going to bring a smile to your face!
-The URL-Shortner is a simple tool that you can utilize to create short versions of that long urls and share it with others. Additionally, its just a few clicks to update an existing URL if you made a mistake or the URL has changes over time. If you don't need it anymore, simply go ahead and delete that.
+If you answered yes to any of the above questions, this will bring a smile to your face!
+The URL-Shortner is a simple tool that you can utilize to create short versions of long URLs and share them with others. Additionally, it's just a few clicks to update an existing URL if you made a mistake or the URL has changed over time. If you don't need it anymore, delete it.
 
 
 https://user-images.githubusercontent.com/112050088/205785645-c98b3211-18ce-482b-aab8-4f6aaffb1400.mp4
 
 
-URL-Shortner has APIs developed using python and front-end web application developed using angular.
+URL-Shortner has APIs developed using Python and front-end web application developed using angular.
 
 ## How to use?
 
@@ -60,35 +60,32 @@ URL-Shortner has APIs developed using python and front-end web application devel
 3. do python manage.py runserver
 4. go to http://127.0.0.1:8000/
 
-You can then go ahead and signup by giving basic details. We do not ask for credit card, or any other PII as your data is precious!
+You can then go ahead and sign up by giving basic details. We do not ask for credit cards, or any other PII as your data is precious!
 
-![signup](https://user-images.githubusercontent.com/19202592/205764315-31ff66c6-0629-4bb6-a808-aefa9b8d2e7b.png)
+![signup](https://github.com/user-attachments/assets/36cc4825-5486-40d1-a80a-c86dc6540b5f)
 
-Enter the long version of the URL you want to generate a short version and click **Generate**.
-![Screenshot (47)](https://user-images.githubusercontent.com/19202592/205765335-38bd21cc-37e5-42f2-b687-c4a45adab907.png)
+Enter the long version of the URL you want to generate a short version and click **Generate**. You also have the capability to create a custom URL for your application. We have included standards and protection to avoid SQL Injection attacks.
+![Screenshot (47)](https://github.com/user-attachments/assets/a1d9c42f-17bb-4f06-ae6c-20f7b43fd168)
 
-You would be redirected to a page listing all the urls you have made and you can see which url you had made earlier
-![Screenshot (50)](https://user-images.githubusercontent.com/19202592/205765347-5ab09884-20db-403d-895e-1b6a852ef15c.png)
+You will be redirected to a page listing all the URLs you have made and you can see which URL you made earlier
+![Screenshot (50)](https://github.com/user-attachments/assets/205d2d78-d7a0-44fd-884e-ba8ea78729e1)
 
-You also have the capability to create a custom url for your application. We have included standards and protection to avoid SQL Injection attacks.
-![Screenshot (48)](https://user-images.githubusercontent.com/19202592/205765826-c4c532fd-f6ae-426f-9274-affc460b35cb.png)
+You can also delete individual or all the URLs from the listing page. 
+![delete URLs](https://github.com/user-attachments/assets/d954481f-67c6-4e69-ac34-2e5ad3888829)
 
-You can also delete the URLs from the listing page. 
+We have also added a new feature! You can analyze how much your short URLs are being used for better analysis and tracking. Additionally, you can also export the statistics of the clicks for all the URLs in a CSV file.
+![Screenshot (49)](https://github.com/user-attachments/assets/7cb1d42c-9458-4a93-a856-43f66cd3d768)
 
-We have also added a new feature! You can analyse how much your short urls are being used for better analysis and tracking.
-![Screenshot (49)](https://user-images.githubusercontent.com/19202592/205765449-3d934017-3416-48ea-87ec-d0f8e399a0df.png)
 
 You no longer need to remember the special code that our beloved previous contributors had! Since you have an account you 
-can always manage your urls!
+can always manage your URLs!
 
 ---
 
 ## We love our contributors ❤️❤️
 
-Make a [pull request](https://github.com/AkashSarda3/URL-Shortner/compare) to help contribute.
-
-<a href="https://github.com/AkashSarda3/URL-Shortner/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AkashSarda3/URL-Shortner&columns=24&max=480" />
-</a>
+Make a [pull request](https://github.com/fantastic-riddles/URL-Shortner/compare) to help contribute.
 
 We reference our UI from Zenblog.
+
+This project is built upon the earlier project - [previous version](https://github.com/AkashSarda3/URL-Shortner)
