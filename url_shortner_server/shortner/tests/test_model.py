@@ -4,7 +4,8 @@ from shortner.models import Link
 
 class TestModel(TestCase):
     def test_create_new_entry(self):
-        link = Link.objects.create(
+        """Create a new entry"""
+        link = Link.objects.create( # pylint: disable=no-member
             long_url="www.ncsu.edu",
             special_code="00000000-0000-0000-0000-000000000000",
             stub="aaaaaaaaaa",
