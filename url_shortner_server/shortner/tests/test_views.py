@@ -16,6 +16,7 @@ class TestViews(TestCase):
         return super().tearDown()
 
     def test_all_view(self):
+        """Test all views"""
         req_long_url = "https://www.google.com/"
         http_response = self.client.post(
             reverse('signup'),
@@ -33,16 +34,16 @@ class TestViews(TestCase):
             {"long-url": req_long_url},
         )
 
-        self.assertEquals(http_response.status_code, 302)
+        self.assertEqual(http_response.status_code, 302)
         link = give_link_by_username_long_url('akash2', req_long_url)
         long_url = link.long_url
         stub = link.stub
-        self.assertEquals(10, len(stub))
-        self.assertNotEquals(9, len(stub))
-        self.assertEquals(long_url, req_long_url)
+        self.assertEqual(10, len(stub))
+        self.assertNotEqual(9, len(stub))
+        self.assertEqual(long_url, req_long_url)
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
-        self.assertEquals(http_response.status_code, 302)
+        self.assertEqual(http_response.status_code, 302)
 
         link = give_link_by_username_long_url('akash2', req_long_url)
         assert link.ctr == 1
@@ -56,29 +57,29 @@ class TestViews(TestCase):
         http_response = self.client.get(
             reverse('list')
         )
-        self.assertEquals(http_response.status_code, 200)
+        self.assertEqual(http_response.status_code, 200)
 
         http_response = self.client.get(
             reverse('stats')
         )
 
-        self.assertEquals(http_response.status_code, 200)
+        self.assertEqual(http_response.status_code, 200)
 
         links = give_links('akash2')
         assert len(links) == 2
         delete_reponse = self.client.get(
             reverse('delete', args=[link.special_code]),
         )
-        self.assertEquals(delete_reponse.status_code, 302)
+        self.assertEqual(delete_reponse.status_code, 302)
 
         link = give_link_by_username_long_url('akash2', long_url2)
         delete_reponse = self.client.get(
             reverse('delete', args=[link.special_code]),
         )
-        self.assertEquals(delete_reponse.status_code, 302)
+        self.assertEqual(delete_reponse.status_code, 302)
 
         # Verify error in deleting deleted entry
         delete_reponse = self.client.delete(
             reverse('delete', args=[link.special_code]),
         )
-        self.assertEquals(delete_reponse.status_code, 405)
+        self.assertEqual(delete_reponse.status_code, 405)
