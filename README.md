@@ -20,14 +20,19 @@
 
 [![Documentation Badge](https://img.shields.io/badge/API_Documentation-pdoc-blue.svg)](https://lemon-desert-093c6c80f.2.azurestaticapps.net/)
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
+
 ---
 Txtly URL-Shortner
+---
 
 Welcome to URL-Shortner by Group 21!
 
 Inspired by Group 5's fantastic groundwork, we've taken the core functionality of a URL shortener and enhanced it with new, powerful features to provide a seamless user experience. Our goal? To make URL shortening simple, customizable, and insightful.
+
 ---
 🚀 Key Features
+---
+
 🔗 Customizable Short URLs
 Stand out with custom URL stubs! Now, you can create branded, memorable links that align perfectly with your identity and boost user engagement.
 
@@ -39,8 +44,10 @@ Manage large volumes of URLs with ease using our bulk upload feature. Simply upl
 
 🔒 Secure & Reliable URL Management
 We prioritize your data’s security. With encrypted management for all URLs, your links are safe and fully manageable at any time. Delete, update, or redirect URLs as needed.
+
 ---
 🛠️ What’s New?
+---
 Enhanced UI/UX
 A refined user interface designed for simplicity and ease of use.
 
@@ -52,16 +59,21 @@ Your URLs, your way! Choose a custom stub to make links recognizable and brand-a
 
 Advanced Analytics
 Track how often your links are clicked, see where your users are coming from, and analyze link performance to better connect with your audience.
+
 ---
 📖 About the Project
+---
+
 Have you ever:
 
 Struggled to type out long URLs on your phone?
 Sent the wrong link by mistake?
 Wanted to keep the same URL but update the destination over time?
 If any of this sounds familiar, URL-Shortner is here to help! Designed for simplicity and flexibility, URL-Shortner lets you shorten, customize, update, and delete URLs with just a few clicks. Plus, you can upload multiple URLs in bulk, manage them all from one place, and gather performance insights through our analytics dashboard.
+
 ---
 ### Install
+---
 
 1. Go to url_shortner_server
 2. do pip install -r requirements.txt
