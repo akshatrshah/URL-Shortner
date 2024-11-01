@@ -30,6 +30,22 @@ Welcome to URL-Shortner by Group 21!
 Inspired by Group 5's fantastic groundwork, we've taken the core functionality of a URL shortener and enhanced it with new, powerful features to provide a seamless user experience. Our goal? To make URL shortening simple, customizable, and insightful.
 
 ---
+📖 About the Project
+---
+
+Have you ever:
+
+Struggled to type out long URLs on your phone?
+Sent the wrong link by mistake?
+Wanted to keep the same URL but update the destination over time?
+If any of this sounds familiar, URL-Shortner is here to help! Designed for simplicity and flexibility, URL-Shortner lets you shorten, customize, update, and delete URLs with just a few clicks. Plus, you can upload multiple URLs in bulk, manage them all from one place, and gather performance insights through our analytics dashboard.
+
+
+If you answered yes to any of the above questions, URL-Shortner is here to simplify your URL management! With this tool, you can create short, memorable links that are easy to share and update as needed. Want to personalize your links? Add custom stubs to make URLs align with your brand. Plus, track link performance with analytics to understand your audience, or upload multiple links at once to manage them all from one place. Whether you’re looking to customize, analyze, or bulk-manage URLs, URL-Shortner has you covered!
+
+https://app.animaker.com/video/YRI3ZZF3TSC7QHO5
+
+---
 🚀 Key Features
 ---
 
@@ -48,6 +64,7 @@ We prioritize your data’s security. With encrypted management for all URLs, yo
 ---
 🛠️ What’s New?
 ---
+
 Enhanced UI/UX
 A refined user interface designed for simplicity and ease of use.
 
@@ -58,18 +75,8 @@ Custom URL Creation
 Your URLs, your way! Choose a custom stub to make links recognizable and brand-aligned.
 
 Advanced Analytics
-Track how often your links are clicked, see where your users are coming from, and analyze link performance to better connect with your audience.
+Track how often your links are clicked, export them for more detailed understanding, and analyze link performance to better connect with your audience.
 
----
-📖 About the Project
----
-
-Have you ever:
-
-Struggled to type out long URLs on your phone?
-Sent the wrong link by mistake?
-Wanted to keep the same URL but update the destination over time?
-If any of this sounds familiar, URL-Shortner is here to help! Designed for simplicity and flexibility, URL-Shortner lets you shorten, customize, update, and delete URLs with just a few clicks. Plus, you can upload multiple URLs in bulk, manage them all from one place, and gather performance insights through our analytics dashboard.
 
 ---
 ### Install
