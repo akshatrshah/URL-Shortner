@@ -285,19 +285,27 @@
       </div>
       <div class="button-container text-center mt-4">
         <a href="{% url 'index' %}" class="btn btn-primary">Create a New URL</a>
-        <form action="{% url 'delete_all_urls' %}" method="post" style="display: inline;">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-danger">Delete All URLs</button>
+        <form action="{% url 'delete_all_urls' %}" method="post" style="display: inline;" id="deleteForm">
+            {% csrf_token %}
+            <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete All URLs</button>
         </form>
-      </div>
     </div>
+    
+    <script>
+        function confirmDelete() {
+            const userConfirmed = confirm("Are you sure you want to delete all URLs? This action cannot be undone.");
+            if (userConfirmed) {
+                document.getElementById('deleteForm').submit();
+            }
+        }
+    </script>
   </main>
   
   
   <!-- Footer -->
   <footer id="footer" class="footer">
     <div class="container">
-      <p>Made with <span>&hearts;</span> by Team 5 and Team 16</p>
+      <p>Made with <span>&hearts;</span> by Team 21</p>
     </div>
   </footer>
 
