@@ -6,7 +6,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/stargazers)
 [![GitHub contributors](https://img.shields.io/github/contributors/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/contributors)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/commit-activity)
-[![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
+<a href="https://doi.org/10.5281/zenodo.14020718"><img src="https://zenodo.org/badge/866299222.svg" alt="DOI"></a>
 [![GitHub license](https://img.shields.io/github/license/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)
 
 [![Build](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml)
