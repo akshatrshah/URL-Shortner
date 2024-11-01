@@ -2,268 +2,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <!-- Preconnect for Fonts and Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  <link rel="stylesheet" href="{% static 'homemain.css' %}">
-  <link rel="stylesheet" href="{% static 'colors.css' %}">
-  <style>
-/* Global Styles */
+    <meta charset="utf-8">
+    <!-- Preconnect for Fonts and Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'homemain.css' %}">
+    <link rel="stylesheet" href="{% static 'colors.css' %}">
+    <style>
+        /* Global Styles */
+        body, html {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #444; /* Default text color */
+            background-color: #fafafa; /* Light background color for overall page */
+            padding-bottom: 0px;
+        }
+        main {
+            flex: 1;
+        }
+        /* Header and Navbar Styling */
+        .header {
+            background: #ffffff; /* Light background for the navbar */
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease; /* Smooth transition */
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #333; /* Dark text for better contrast */
+            margin: 0;
+            font-size: 2em; /* Increased size for emphasis */
+        }
+        .navbar {
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center align items vertically */
+            justify-content: space-between; /* Space between items */
+            width: 100%;
+        }
+        .nav-links {
+            flex: 1; /* Allow this to grow and fill space */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center items in the nav */
+        }
+        .nav-links ul {
+            list-style: none; /* Remove bullet points */
+            display: flex; /* Use flexbox for horizontal alignment */
+            gap: 3em; /* Spacing between links */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 3em; /* More spacing for better visibility */
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li a {
+            color: #555; /* Darker for good contrast */
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 0; /* Added vertical padding */
+            transition: color 0.3s;
+        }
+        .navbar li a:hover {
+            color: #ff6347; /* Change to a vibrant color on hover */
+            text-decoration: underline; /* Underline effect on hover */
+        }
+        .sign-out-container {
+            margin-left: auto; /* Push the Sign Out button to the right */
+        }
+        .sign-out-container a {
+            color: #333; /* Set color for the link */
+            font-weight: 600; /* Make the font bold */
+            text-decoration: none; /* Remove underline */
+            padding: 0.5rem 1rem; /* Add some padding */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+        .sign-out-container a:hover {
+            color: #ff6347; /* Change color on hover */
+        }
+        .header a {
+            color: #333; /* Dark text color for links */
+            font-weight: 600;
+            margin-left: 2em; /* Spacing for clarity */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .header a:hover {
+            color: #ff6347; /* Highlight on hover */
+        }
+        
+        /* Jumbotron Styling */
+        .jumbotron {
+            padding: 5em 2em; /* Increased padding for a spacious feel */
+            background: linear-gradient(to right, rgba(255, 105, 180, 0.8), rgba(255, 165, 0, 0.8), rgba(0, 128, 255, 0.8), rgba(60, 179, 113, 0.8)), url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
+            color: white;
+            text-align: center;
+            border-radius: 8px; /* Rounded corners for jumbotron */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .jumbotron h1 {
+            font-size: 3.5em; /* Increased size for emphasis */
+            margin-bottom: 0.5em;
+        }
 
- body, html {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #444; /* Default text color */
-      background-color: #fafafa; /* Light background color for overall page */
-      padding-bottom: 0px;
-    }
-    main {
-      flex: 1;
-    }
+        .jumbotron p {
+            font-size: 1.5em; /* Larger text for readability */
+            margin-bottom: 1em;
+        }
 
-    /* Header and Navbar Styling */
-    .header {
-      background: #ffffff; /* Light background for the navbar */
-      padding: 1.5rem 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s ease; /* Smooth transition */
-    }
-    .header h1 {
-      font-family: 'Playfair Display', serif;
-      color: #333; /* Dark text for better contrast */
-      margin: 0;
-      font-size: 2em; /* Increased size for emphasis */
-    }
-    .navbar {
-      display: flex; /* Use flexbox */
-      align-items: center; /* Center align items vertically */
-      justify-content: space-between; /* Space between items */
-      width: 100%;
-    }
-    .nav-links {
-        flex: 1; /* Allow this to grow and fill space */
-        display: flex; /* Use flexbox for centering */
-        justify-content: center; /* Center items in the nav */
-    }
-    .nav-links ul {
-        list-style: none; /* Remove bullet points */
-        display: flex; /* Use flexbox for horizontal alignment */
-        gap: 3em; /* Spacing between links */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-    }
+        .jumbotron .btn {
+             background-color:#ff6347 ;
+             color:#fff ;
+             padding:.75em ;
+             border:none ;
+             border-radius:.5em ;
+             transition:.3s ;
+         }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 3em; /* More spacing for better visibility */
-      margin: 0;
-      padding: 0;
-    }
-    .navbar li a {
-      color: #555; /* Darker for good contrast */
-      font-weight: 500;
-      text-decoration: none;
-      padding: 0.5rem 0; /* Added vertical padding */
-      transition: color 0.3s;
-    }
-    .navbar li a:hover {
-      color: #ff6347; /* Change to a vibrant color on hover */
-      text-decoration: underline; /* Underline effect on hover */
-    }
-    .sign-out-container {
-    margin-left: auto; /* Push the Sign Out button to the right */
-}
+         .jumbotron .btn:hover{
+             background-color:#e25555 ;
+         }
 
-.sign-out-container a {
-    color: #333; /* Set color for the link */
-    font-weight: 600; /* Make the font bold */
-    text-decoration: none; /* Remove underline */
-    padding: 0.5rem 1rem; /* Add some padding */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
+         /* About Section Styles */ 
+         #about { 
+             padding-top :4em ; 
+             padding-bottom :4em ; 
+             background-color :#ffffff ; 
+             box-shadow :0px ; 
+             border-radius :8px ; 
+             margin :2em ; 
+         } 
 
-.sign-out-container a:hover {
-    color: #ff6347; /* Change color on hover */
-}
-    .header a {
-      color: #333; /* Dark text color for links */
-      font-weight: 600;
-      margin-left: 2em; /* Spacing for clarity */
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .header a:hover {
-      color: #ff6347; /* Highlight on hover */
-    }
+         #about h2 { 
+             margin-top :0 ; 
+             font-size :2.5em ; 
+             color :#333 ; 
+         } 
 
-    /* Jumbotron Styling */
-    .jumbotron {
-      padding: 5em 2em; /* Increased padding for a spacious feel */
-      background: linear-gradient(
-        to right, 
-        rgba(255, 105, 180, 0.8),  
-        rgba(255, 165, 0, 0.8),    
-        rgba(0, 128, 255, 0.8),    
-        rgba(60, 179, 113, 0.8)    
-      ), 
-      url('{% static "images/jumbotron-bg.jpg" %}') center center / cover no-repeat;
-      color: white;
-      text-align: center;
-      border-radius: 8px; /* Rounded corners for jumbotron */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .jumbotron h1 {
-      font-size: 3.5em; /* Increased size for emphasis */
-      margin-bottom: 0.5em;
-    }
-    .jumbotron p {
-      font-size: 1.5em; /* Larger text for readability */
-      margin-bottom: 1em;
-    }
-    .jumbotron .btn {
-      background: var(--color-primary);
-      color: #fff;
-      padding: 0.75em 2.5em; /* Increased padding for better clickability */
-      font-size: 1.2em;
-      border: none;
-      border-radius: 5px; /* Slightly rounded corners for buttons */
-      transition: background 0.3s ease, transform 0.2s; /* Smooth transitions */
-    }
-    .jumbotron .btn:hover {
-      background: rgba(255, 99, 71, 0.9);
-      transform: translateY(-2px); /* Lift effect on hover */
-    }
+         #about p { 
+             font-size :1.2em ; 
+             line-height :1.6 ; 
+             margin-bottom :1em ; 
+             color :#555 ; 
+         } 
 
-    /* About Section Styles */
-    #about {
-      padding: 4em 2em; /* More padding for spaciousness */
-      background: #ffffff; /* Light background for contrast */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 8px; /* Rounded corners for about section */
-      margin: 2em; /* Margin to separate from edges */
-    }
-    #about h2 {
-      margin-top: 0; /* Remove default margin for alignment */
-      font-size: 2.5em; /* Larger title for emphasis */
-      color: #333; /* Dark color for better visibility */
-    }
-    #about p {
-      font-size: 1.2em; /* Slightly larger text for readability */
-      line-height: 1.6; /* Improved line height for readability */
-      margin-bottom: 1em;
-      color: #555; /* Dark gray for softer contrast */
-    }
-    #about ul {
-      margin-top: 1em; /* Space above the list */
-      list-style: disc; /* Bullet points for clarity */
-      padding-left: 1.5em; /* Indentation for bullet points */
-    }
-    #about ul li {
-      margin-bottom: 0.5em; /* Spacing between list items */
-    }
+         #about ul { 
+             margin-top :1em ; 
+             list-style :disc ; 
+             padding-left :1.5em ; 
+         } 
 
-    /* Footer Styling */
-    .footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: auto; /* Push footer to bottom */
-    }
-    .footer span {
-      color: #e25555;
-    }
+         #about ul li { 
+             margin-bottom :0.5em ; 
+         } 
 
-    /* Scroll to Top Button */
-    .scroll-top {
-      position: fixed;
-      bottom: 2em;
-      right: 2em;
-      background: #ff6347; /* Color of scroll button */
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
-      z-index: 1000; /* Ensure button is above other elements */
-    }
-    .scroll-top:hover {
-      background: rgba(255, 99, 71, 0.9);
-      transform: translateY(-2px); /* Lift effect on hover */
-    }
-  </style>
+         /* Footer Styling */ 
+         .footer { 
+             background-color :#333 ; 
+             color :#fff ; 
+             text-align :center ; 
+             padding :1rem ; 
+             margin-top :auto ; 
+         } 
+
+         .footer span { 
+             color :#e25555 ; 
+         } 
+
+         /* Scroll to Top Button */ 
+         .scroll-top { 
+              position :fixed ; 
+              bottom :2em ; 
+              right :2em ; 
+              background-color :#ff6347 ;
+              color:#fff ;
+              border:none ;
+              border-radius :50% ;
+              width :50px ;
+              height :50px ;
+              display:flex ;
+              align-items:center ;
+              justify-content:center ;
+              box-shadow :0px ;
+              transition :.3s ;
+              z-index :10000 ;
+          } 
+
+          .scroll-top:hover {  
+              background-color:#e25555 ;
+          }  
+    </style>
 </head>
-
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <h1>Welcome {{userFname}}</h1>
-      <nav id="navbar" class="navbar">
-        <div class="nav-links">
-            <ul>
-                <li><a href="{% url 'about_us' %}">Home</a></li>
-                <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
-                <li><a href="{% url 'stats' %}">Statistics</a></li>
-            </ul>
-        </div>
-        <div class="sign-out-container">
-            <a href="/signout">Sign Out</a>
-        </div>
-    </nav>  
-      
+        <h2 style="white-space: nowrap;">Welcome to Txtly</h2>
+        <nav id="navbar" class="navbar">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{% url 'about_us' %}">Home</a></li>
+                    <li><a href="{% url 'list' %}">Manage Your Urls</a></li>
+                    <li><a href="{% url 'stats' %}">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="sign-out-container">
+                <a href="/signout">Sign Out</a>
+            </div>
+        </nav>
     </div>
-  </header>
-  
-  <main id="main">
+</header>
+
+<main id="main">
     <!-- Jumbotron Section -->
     <section class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Our URL Shortener</h1>
-        <p>Simplify your links and make them easier to share! Start creating short, memorable links that make navigation and tracking a breeze.</p>
-        <a href="{% url 'index' %}" class="btn btn-primary">Create a new Url</a>
-      </div>
+       <div class="container">
+           <h1>Welcome to Our URL Shortener</h1>
+           <p>Simplify your links and make them easier to share! Start creating short, memorable links that make navigation and tracking a breeze.</p>
+           <a href="{% url 'index' %}" class="btn btn-primary">Create a new Url</a>
+       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about py-5">
-      <div class="container">
-        <h2>About Our Project</h2>
-        <p>
-          Our URL shortener project is designed to transform long and unwieldy links into concise, easy-to-share URLs. Perfect for social media, marketing campaigns, and more, our tool provides a seamless experience with real-time analytics and tracking.
-        </p>
-        <h3>Key Features</h3>
-        <ul>
-          <li><strong>Customizable URL Stubs:</strong> Personalize each short URL with your choice of text.</li>
-          <li><strong>URL Analytics:</strong> Gain insights on link clicks, geographic data, and other metrics to optimize your marketing strategy.</li>
-          <li><strong>Bulk URL Upload:</strong> Save time by uploading multiple URLs at once in CSV format.</li>
-          <li><strong>Secure and Reliable:</strong> Our shortener ensures secure, encrypted URL management.</li>
-        </ul>
-      </div>
+       <div class="container">
+           <h2>About Our Project</h2>
+           <p>Our URL shortener project is designed to transform long and unwieldy links into concise, easy-to-share URLs. Perfect for social media, marketing campaigns, and more, our tool provides a seamless experience with real-time analytics and tracking.</p>
+
+           <h2>Key Features</h2>
+           <ul>
+               <li>
+                   <h3>Customizable URL Stubs</h3>
+                   <p>Personalize each short URL by selecting your preferred text. This feature allows you to create memorable and brand-aligned links that enhance user engagement and recognition.</p>
+               </li>
+               <li>
+                   <h3>Comprehensive URL Analytics</h3>
+                   <p>Gain valuable insights by tracking link clicks, geographic data, and other essential metrics. This information empowers you to optimize your marketing strategy, understand audience behavior, and improve campaign performance.</p>
+               </li>
+               <li>
+                   <h3>Efficient Bulk URL Upload</h3>
+                   <p>Save time and streamline your workflow by uploading multiple URLs at once in CSV format. This feature is perfect for marketers and businesses looking to manage large volumes of links quickly and efficiently.</p>
+               </li>
+               <li>
+                   <h3>Secure and Reliable Management</h3>
+                   <p>Our URL shortener prioritizes your security with encrypted URL management. You can trust that your links are safe and that your data is protected, allowing you to focus on what matters most—growing your brand.</p>
+               </li>
+           </ul>
+       </div>
+       <section id="contributors" class="contributors py-5">
+        <div class="container">
+            <h2>Contributors</h2>
+            <p>Follow our work on GitHub:</p>
+            <ol>
+                <li><a href="https://github.com/akshatrshah" target="_blank">Akshat Shah</a></li>
+                <li><a href="https://github.com/bhandariprerak" target="_blank">Prerak Bhandari</a></li>
+                <li><a href="https://github.com/Scooby3000" target="_blank">Dhairya Shah</a></li>
+            </ol>
+        </div>
     </section>
-  </main>
+   </section>
+   
 
-  <footer id="footer" class="footer">
-    <div class="container">
-      <p>Made with <span>&hearts;</span> by Team 5 and Team 16</p>
-    </div>
-  </footer>
+</main>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
-  <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+<footer id="footer" class="footer">
+   <div class="container">
+       <p>Made with <span>&hearts;</span> by Team 21</p>
+   </div>
+</footer>
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
+
 </body>
 </html>
