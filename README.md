@@ -1,4 +1,5 @@
 # URL-Shortner 🔗
+## Check the develop branch for the latest features - [develop branch](https://github.com/fantastic-riddles/URL-Shortner/tree/develop)
 
 [![GitHub Release](https://img.shields.io/github/v/release/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
 [![GitHub Tag](https://img.shields.io/github/v/tag/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
