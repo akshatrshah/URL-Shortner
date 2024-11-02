@@ -22,11 +22,9 @@ class NewView(View):
                 try:
                     csv_reader = csv.DictReader(uploaded_file.read().decode('utf-8').splitlines())
                     existing_stubs = set(Link.objects.values_list('stub', flat=True)) # pylint: disable=no-member
-
                     for row in csv_reader:
-                        long_url = row.get('link', '').strip()
+                        long_url = next((value for key, value in row.items() if 'link' in key), None)
                         custom_stub = row.get('stub', '').strip()
-
                         if long_url:
                             link = Link(long_url=long_url, username=username)
                             if custom_stub:
