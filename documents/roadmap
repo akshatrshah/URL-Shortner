@@ -1,0 +1,18 @@
+---
+Roadmap
+---
+User Authentication: Add login/signup for user link management. Secure profile and data with API support.
+UI and Navigation: Redesign the interface with a navbar, user dashboard, and link management features (create, update, delete).
+Customization and Analytics: Allow custom URL stubs and real-time link tracking for insights on clicks and location data.
+Bulk Upload and Security: Enable CSV uploads for bulk links and ensure data security.
+Documentation: Provide user and developer guides.
+
+---
+Work Distribution
+---
+
+UI Design: Akshat, Dhairya – Design dashboard, navbar, and link management views.
+Login/Signup: Prerak – Implement login/signup and test cases.
+Customization & Backend: Dhairya, Akshat – Add custom URLs, backend support, and secure data handling.
+Models: Akshat – modify models for user link management.
+Documentation: Dhairya, Akshat, Prerak – Write guides and documentation.
