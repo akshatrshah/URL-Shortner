@@ -8,7 +8,7 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/graphs/commit-activity)
 [![GitHub license](https://img.shields.io/github/license/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/blob/develop/LICENSE)
 
-[![Build](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml)
+<!-- [![Build](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml) -->
 
 <!-- [![Linting Check](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/linting_workflow.yml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/linting_workflow.yml) -->
 
