@@ -103,8 +103,6 @@ class TestUrls(SimpleTestCase):
         url = reverse('custom')
         self.assertEqual(resolve(url).func.view_class, CustomView)
 
-
-
     # def test_nonexistent_url_raises_404(self):
     #     with self.assertRaises(resolve.Resolver404):
     #         resolve('/nonexistent-url/')
