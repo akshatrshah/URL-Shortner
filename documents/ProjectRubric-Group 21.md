@@ -5,7 +5,7 @@ Implementation video \- [https://drive.google.com/file/d/1qF8dR9zTcg4T-tR3HXbiGu
 
 Github Repository \- [https://github.com/fantastic-riddles/URL-Shortner](https://github.com/fantastic-riddles/URL-Shortner) 
 
-| Notes | Self-Assessment | Evidence |
+| Notes | Self-Assessment 298/318 | Evidence |
 | :---- | :---- | :---- |
 | Workload is spread over the whole team (one team member is often Xtimes more productive than the others… | 3 | [Everyone was assigned a set of features and tasks based on the tickets.](https://github.com/orgs/fantastic-riddles/projects/1/views/1) |
 | but nevertheless, here is a track record that everyone is contributing a lot) | 3 | [Commit history](https://github.com/fantastic-riddles/URL-Shortner/commits/develop) |
