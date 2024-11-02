@@ -21,39 +21,67 @@
 [![Documentation Badge](https://img.shields.io/badge/API_Documentation-pdoc-blue.svg)](https://lemon-desert-093c6c80f.2.azurestaticapps.net/)
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
 
-## URL-Shortner - Simple URL shortener
+---
+Txtly URL-Shortner
+---
 
-Hi! We are Group 16 and we bring to you the new URL Shortner. While Group 5 did a tremendous job starting with this project, we wanted to add new features to make it even better. 
+Welcome to URL-Shortner by Group 21!
 
-We enhanced the UI and we enhanced the user experience!
-We added a feature to login/sign up and create your own URLs! That's right now own those URLs guaranteeing management of your URL is safe and cannot be updated by anyone else.
-We know why you use a URL shortner, you need to share links and you need to see how your customers are doing. We added some analytics to show how much your customers are using links!
-Last but none of least, you do not want to use the boring URLs that URL Shortner gives you. We bring to you the custom URL feature!
-You can create Custom Short URLs of your choice! Designed by you!
-Your customers will surely love it!
+Inspired by Group 5's fantastic groundwork, we've taken the core functionality of a URL shortener and enhanced it with new, powerful features to provide a seamless user experience. Our goal? To make URL shortening simple, customizable, and insightful.
 
+---
+📖 About the Project
+---
 
-Wondering why the Shortner is misspelled? That's because this project is all about making it short, simple, and easy to share.
-URL-Shortner aims to be the easiest ad-free URL shortener that can be used to quickly generate sharable short urls.
+Have you ever:
 
-- You ever typed out a long URL on your phone only to see that you missed a '/' or misspelled a word?
-
-- Have you shared multiple URLs with others because you sent an incorrect URL earlier?
-
-- You had to update the same document every year but with an updated URL, wondering if there was a way to keep the URL the same and just redirect to a new one every year?
-
-If you answered yes to any of the above questions, this will bring a smile to your face!
-The URL-Shortner is a simple tool that you can utilize to create short versions of long URLs and share them with others. Additionally, it's just a few clicks to update an existing URL if you made a mistake or the URL has changed over time. If you don't need it anymore, delete it.
+Struggled to type out long URLs on your phone?
+Sent the wrong link by mistake?
+Wanted to keep the same URL but update the destination over time?
+If any of this sounds familiar, URL-Shortner is here to help! Designed for simplicity and flexibility, URL-Shortner lets you shorten, customize, update, and delete URLs with just a few clicks. Plus, you can upload multiple URLs in bulk, manage them all from one place, and gather performance insights through our analytics dashboard.
 
 
-https://user-images.githubusercontent.com/112050088/205785645-c98b3211-18ce-482b-aab8-4f6aaffb1400.mp4
+If you answered yes to any of the above questions, URL-Shortner is here to simplify your URL management! With this tool, you can create short, memorable links that are easy to share and update as needed. Want to personalize your links? Add custom stubs to make URLs align with your brand. Plus, track link performance with analytics to understand your audience, or upload multiple links at once to manage them all from one place. Whether you’re looking to customize, analyze, or bulk-manage URLs, URL-Shortner has you covered!
 
 
-URL-Shortner has APIs developed using Python and front-end web application developed using angular.
+https://github.com/user-attachments/assets/851e115f-19e7-43c7-9f98-48b024901422
 
-## How to use?
+---
+🚀 Key Features
+---
 
+🔗 Customizable Short URLs
+Stand out with custom URL stubs! Now, you can create branded, memorable links that align perfectly with your identity and boost user engagement.
+
+📊 Comprehensive URL Analytics
+Get insights on link performance! URL-Shortner’s analytics track clicks and other metrics to help you understand your audience and fine-tune your campaigns.
+
+📋 Bulk URL Upload
+Manage large volumes of URLs with ease using our bulk upload feature. Simply upload a CSV file or comma-separated list of URLs and let URL-Shortner do the rest!
+
+🔒 Secure & Reliable URL Management
+We prioritize your data’s security. With encrypted management for all URLs, your links are safe and fully manageable at any time. Delete, update, or redirect URLs as needed.
+
+---
+🛠️ What’s New?
+---
+
+Enhanced UI/UX
+A refined user interface designed for simplicity and ease of use.
+
+User Login & Ownership of URLs
+Sign up and manage your URLs like never before. Only you can edit or delete the links you've created, adding a new layer of security and reliability.
+
+Custom URL Creation
+Your URLs, your way! Choose a custom stub to make links recognizable and brand-aligned.
+
+Advanced Analytics
+Track how often your links are clicked, export them for more detailed understanding, and analyze link performance to better connect with your audience.
+
+
+---
 ### Install
+---
 
 1. Go to url_shortner_server
 2. do pip install -r requirements.txt
