@@ -1,22 +1,21 @@
 # URL-Shortner 🔗
 
-[![GitHub Release](https://img.shields.io/github/v/release/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
-[![GitHub Tag](https://img.shields.io/github/v/tag/AkashSarda3/URL-Shortner?style=plastic)](https://github.com/AkashSarda3/URL-Shortner/releases)
-[![GitHub forks](https://img.shields.io/github/forks/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/network)
-[![GitHub stars](https://img.shields.io/github/stars/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/stargazers)
-[![GitHub contributors](https://img.shields.io/github/contributors/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/contributors)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/graphs/commit-activity)
-<a href="https://doi.org/10.5281/zenodo.14020718"><img src="https://zenodo.org/badge/866299222.svg" alt="DOI"></a>
-[![GitHub license](https://img.shields.io/github/license/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/fantastic-riddles/URL-Shortner?style=plastic)](https://github.com/fantastic-riddles/URL-Shortner/releases)
+[![GitHub Tag](https://img.shields.io/github/v/tag/fantastic-riddles/URL-Shortner?style=plastic)](https://github.com/fantastic-riddles/URL-Shortner/releases)
+[![GitHub forks](https://img.shields.io/github/forks/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/network)
+[![GitHub stars](https://img.shields.io/github/stars/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/graphs/contributors)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/graphs/commit-activity)
+[![GitHub license](https://img.shields.io/github/license/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/blob/develop/LICENSE)
 
-[![Build](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/unit_test.yaml)
+<!-- [![Build](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml) -->
 
-[![Linting Check](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/linting_workflow.yml/badge.svg)](https://github.com/AkashSarda3/URL-Shortner/actions/workflows/linting_workflow.yml)
+<!-- [![Linting Check](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/linting_workflow.yml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/linting_workflow.yml) -->
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14026734.svg)](https://doi.org/10.5281/zenodo.14026734)
 
-[![GitHub issues](https://img.shields.io/github/issues/AkashSarda3/URL-Shortner)](https://github.com/AkashSarda3/URL-Shortner/issues)
-[![codecov](https://codecov.io/gh/AkashSarda3/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/AkashSarda3/URL-Shortner)
+[![GitHub issues](https://img.shields.io/github/issues/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/issues)
+[![codecov](https://codecov.io/gh/fantastic-riddles/URL-Shortner/graph/badge.svg?token=5Q5FTFG82W)](https://codecov.io/gh/fantastic-riddles/URL-Shortner)
 
 [![Documentation Badge](https://img.shields.io/badge/API_Documentation-pdoc-blue.svg)](https://lemon-desert-093c6c80f.2.azurestaticapps.net/)
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
