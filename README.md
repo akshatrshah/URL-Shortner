@@ -78,15 +78,41 @@ Your URLs, your way! Choose a custom stub to make links recognizable and brand-a
 Advanced Analytics
 Track how often your links are clicked, export them for more detailed understanding, and analyze link performance to better connect with your audience.
 
+### Installation Steps
+#### 1. First install required MySQL dependencies
+##### Linux
+```
+sudo apt update
+sudo apt install libmysqlclient-dev mysql-server mysql-client
+```
+##### MacOS
+```
+brew install mysql
+```
 
----
-### Install
----
+#### 2. Install Python packages and start server
+```
+cd url_shortner_server
+pip install -r requirements.txt
+```
 
-1. Go to url_shortner_server
-2. do pip install -r requirements.txt
-3. do python manage.py runserver
-4. go to http://127.0.0.1:8000/
+#### 3. Create a MySQL database on your System
+```
+# Login to MySQL
+sudo mysql -u root -p
+CREATE DATABASE urlshortner;
+CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'admin123';
+GRANT ALL PRIVILEGES ON urlshortner.* TO 'root'@'127.0.0.1';
+FLUSH PRIVILEGES;
+```
+
+#### 4. Run Migrations and Start server
+```
+python3 manage.py migrate
+python3 manage.py runserver
+```
+
+#### 3. Navigate to http://127.0.0.1:8000/
 
 You can then go ahead and sign up by giving basic details. We do not ask for credit cards, or any other PII as your data is precious!
 
