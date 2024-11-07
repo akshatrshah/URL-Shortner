@@ -93,7 +93,7 @@ def homepage(request, fname):
         print(f"{fname} has logged in")
         args = {}
         args['userFname'] = fname
-        return render(request, 'homepages/AboutUS.html', args)
+        return render(request, 'homepages/AboutUs.html', args)
 
 
 def about_us(request):
