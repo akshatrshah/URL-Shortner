@@ -90,13 +90,13 @@ sudo apt install libmysqlclient-dev mysql-server mysql-client
 brew install mysql
 ```
 
-#### 2. Install Python packages and start server
+#### 2. Install Python packages
 ```
 cd url_shortner_server
 pip install -r requirements.txt
 ```
 
-#### 3. Create a MySQL database on your System
+#### 3. Create a MySQL database on your system
 ```
 # Login to MySQL
 sudo mysql -u root -p
