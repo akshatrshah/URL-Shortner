@@ -70,11 +70,8 @@ class NewView(View):
 
                 link = Link(long_url=long_url, username=username)
 
-                print(type(long_url))
                 if phish_mal_check:
-                    Link.possibly_malicious, Link.virus_total_analysis_id = (
-                        is_possibly_malicious(long_url)
-                    )
+                    link.possibly_malicious = True
 
                 if index < len(custom_stubs) and custom_stubs[index]:
                     custom_stub = custom_stubs[index]

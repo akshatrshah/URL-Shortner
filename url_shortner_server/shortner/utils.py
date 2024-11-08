@@ -28,4 +28,5 @@ def is_possibly_malicious(long_url: str) -> Tuple[bool, str | None]:
     # 4. Do VirusCheck
     virus_check_analysis_id = None
 
-    return (malicious, virus_check_analysis_id)
+    # return (malicious, virus_check_analysis_id)
+    return malicious
