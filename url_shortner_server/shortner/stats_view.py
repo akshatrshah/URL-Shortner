@@ -32,6 +32,7 @@ class StatsView(View):
                     + link_obj.stub,
                     "special_code": link_obj.special_code,
                     "ctr": link_obj.ctr,
+                    "possibly_malicious": link_obj.possibly_malicious,
                 }
             )
 

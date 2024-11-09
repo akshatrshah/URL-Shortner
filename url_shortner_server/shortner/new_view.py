@@ -71,7 +71,7 @@ class NewView(View):
                 link = Link(long_url=long_url, username=username)
 
                 if phish_mal_check:
-                    link.possibly_malicious = True
+                    link.possibly_malicious = is_possibly_malicious(long_url)
 
                 if index < len(custom_stubs) and custom_stubs[index]:
                     custom_stub = custom_stubs[index]
