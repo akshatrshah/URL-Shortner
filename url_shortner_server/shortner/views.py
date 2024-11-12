@@ -1,5 +1,6 @@
 """Views module stores all the views of the application"""
 
+from django.http import JsonResponse
 from shortner.new_view import NewView
 from shortner.stub_view import StubView
 from shortner.delete_view import DeleteView
@@ -7,12 +8,16 @@ from shortner.list_view import ListUrlsView
 from shortner.update_view import UpdateView
 from shortner.custom_view import CustomView
 from shortner.stats_view import StatsView
+from shortner.vt_stats_view import VirusTotalStatsView
 from shortner.login import login_test
 from shortner.models import Link
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from os import getenv
+from vt import Client
+from dotenv import load_dotenv
 
 __all__ = [
     "NewView",
@@ -24,6 +29,7 @@ __all__ = [
     "CustomView",
     "StatsView",
     "delete_all_urls",
+    "VirusTotalStatsView",
 ]
 
 
@@ -146,3 +152,16 @@ def delete_all_urls(request):
             # Delete URLs for the logged-in user
             Link.objects.filter(username=username).delete()  # pylint: disable=no-member
     return redirect("list")  # Redirect back to the list page
+
+
+def vt_stats_full(request):
+    """See full JSON report from a VirusTotal analysis."""
+    load_dotenv()
+    username = request.session.get("username")
+    long_url = request.GET.get("long_url")
+
+    analysis_id = Link.objects.get(username=username, long_url=long_url).vt_analysis_id
+
+    with Client(getenv("VIRUSTOTAL_API_KEY")) as vt_client:
+        analysis = vt_client.get_json("/analyses/{}", analysis_id)
+        return JsonResponse(analysis["data"]["attributes"]["results"])

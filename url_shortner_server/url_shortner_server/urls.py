@@ -16,7 +16,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from shortner.views import NewView, StubView, UpdateView, DeleteView, delete_all_urls
+from shortner.views import (
+    NewView,
+    StubView,
+    UpdateView,
+    DeleteView,
+    delete_all_urls,
+    VirusTotalStatsView,
+)
 from shortner.views import (
     CustomView,
     home,
@@ -25,6 +32,7 @@ from shortner.views import (
     signup,
     about_us,
     create_url,
+    vt_stats_full,
 )
 from shortner.views import login_test, ListUrlsView, homepage, StatsView
 
@@ -49,4 +57,6 @@ urlpatterns = [
     path("index/", create_url, name="index"),
     # re_path(r'homepage/(?P<fname>[\w-]+)/$', homepage, name='homepage' ),
     path("homepage/<str:fname>", homepage, name="homepage"),
+    path("vt_stats", VirusTotalStatsView.as_view(), name="vt_stats"),
+    path("vt_stats_full", vt_stats_full, name="vt_stats_full"),
 ]

@@ -6,5 +6,8 @@ server:
 migrate:
 	python3 manage.py migrate
 
+new:
+	python3 manage.py makemigrations
+
 fmt:
 	black .

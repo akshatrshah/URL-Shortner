@@ -5,7 +5,7 @@ from django.http import HttpRequest, HttpResponseBadRequest
 from django.views.generic import View
 from django.shortcuts import redirect
 from shortner.models import Link
-from shortner.utils import is_possibly_malicious
+from shortner.utils import do_security_check
 
 
 class NewView(View):
@@ -39,9 +39,7 @@ class NewView(View):
 
                             # Do phishing check on url if specified.
                             if phish_mal_check:
-                                link.possibly_malicious = is_possibly_malicious(
-                                    long_url
-                                )
+                                do_security_check(link)
 
                             if custom_stub:
                                 if custom_stub in existing_stubs:
@@ -71,7 +69,7 @@ class NewView(View):
                 link = Link(long_url=long_url, username=username)
 
                 if phish_mal_check:
-                    link.possibly_malicious = is_possibly_malicious(long_url)
+                    do_security_check(link)
 
                 if index < len(custom_stubs) and custom_stubs[index]:
                     custom_stub = custom_stubs[index]

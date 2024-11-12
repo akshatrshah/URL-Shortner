@@ -24,6 +24,7 @@ class ListUrlsView(View):
             x["short_url"] = request.build_absolute_uri("/") + linkObj.stub
             x["special_code"] = linkObj.special_code
             x["possibly_malicious"] = linkObj.possibly_malicious
+            x["vt_analysis_id"] = linkObj.vt_analysis_id
             context["list_of_links"].append(x)
 
         return render(request, "homepages/listurls.html", context=context)

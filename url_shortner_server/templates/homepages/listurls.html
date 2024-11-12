@@ -273,6 +273,12 @@
                     <p><a href="{{ link.long_url }}" target="_blank">{{ link.long_url }}</a></p>
 					{% if link.possibly_malicious %}
       				<p class="warning-text">WARNING: This link has been identified as possibly malicious!</p>
+                    {% if link.vt_analysis_id is not None %}
+					<p class="warning-text">
+						See VirusTotal report
+						<a href="{% url 'vt_stats' %}?long_url={{ link.long_url|urlencode }}">Here</a>
+					</p>
+				    {% endif %}
 					{% endif %}
                   </div>
                 </td>

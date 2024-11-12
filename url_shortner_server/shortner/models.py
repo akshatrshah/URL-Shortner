@@ -19,7 +19,8 @@ class Link(models.Model):
     username = models.CharField(max_length=2083, default="xxx")
     ctr = models.IntegerField(blank=True, null=True)
     possibly_malicious = models.BooleanField(default=False)
-    virus_total_analysis_id = models.CharField(max_length=128)
+    vt_analysis_id = models.CharField(max_length=128, null=True)
+    vt_analysis_stats = models.JSONField(null=True)
 
     def save(self, *args, **kwargs):
         seed(str(self.special_code))

@@ -5,19 +5,21 @@ import re
 from urllib.parse import urlparse
 from typing import Tuple
 
+from shortner.models import Link
 from dotenv import load_dotenv
+from vt import Client
+from vt.error import APIError
 
 
-def is_possibly_malicious(long_url: str) -> Tuple[bool, str | None]:
+def do_security_check(link: Link) -> None:
     """
-    This function checks if a given URL is possibly malicious
+    This function checks if a given Link is possibly malicious
     or contains phishing scams.
-
-    It returns a tuple of with a boolean indicating the URL is
-    in fact malicious, and a possible AnalysisID from VirusCheck.
     """
     load_dotenv()
     malicious = False
+
+    long_url = link.long_url
 
     # 1. Check for HTTPS
     if not long_url.startswith("https://"):
@@ -33,8 +35,16 @@ def is_possibly_malicious(long_url: str) -> Tuple[bool, str | None]:
         malicious = True
 
     # 4. Do VirusCheck
-    VT_AK = getenv("VIRUSTOTAL_API_KEY")
-    virus_check_analysis_id = None
+    with Client(getenv("VIRUSTOTAL_API_KEY")) as vt_client:
+        try:
+            analysis = vt_client.scan_url(long_url, True)
+            if analysis:
+                a_stats = dict(analysis.get("stats"))
+                if a_stats["malicious"] >= 0 or a_stats["suspicious"] >= 0:
+                    link.vt_analysis_stats = a_stats
+                    link.vt_analysis_id = analysis.id
+                    malicious = True
+        except APIError:
+            pass
 
-    # return (malicious, virus_check_analysis_id)
-    return malicious
+    link.possibly_malicious = malicious

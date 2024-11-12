@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirusTotal Stats</title>
+    <style>
+        .url-container {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        .malicious {
+            background-color: #ff6961; /* red */
+            color: white;
+        }
+        .suspicious {
+            background-color: #ffb347; /* orange */
+            color: white;
+        }
+        .undetected {
+            background-color: #fdfd96; /* yellow */
+            color: black;
+        }
+        .harmless {
+            background-color: #77dd77; /* green */
+            color: black;
+        }
+        .timeout {
+            background-color: #cfcfc4; /* grey */
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="url-container">
+    <p>VirusTotal stats for: {{ long_url }}</p>
+</div>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Count</th>
+    </tr>
+    <tr class="malicious">
+        <td>Malicious</td>
+		<td>{{ malicious }}</td>
+    </tr>
+    <tr class="suspicious">
+        <td>Suspicious</td>
+		<td>{{ suspicious }}</td>
+    </tr>
+    <tr class="undetected">
+        <td>Undetected</td>
+		<td>{{ undetected }}</td>
+    </tr>
+    <tr class="harmless">
+        <td>Harmless</td>
+		<td>{{ harmless }}</td>
+    </tr>
+    <tr class="timeout">
+        <td>Timeout</td>
+		<td>{{ timeout }}</td>
+    </tr>
+</table>
+
+<div class="url-container">
+	<p><a href="{% url 'vt_stats_full' %}?long_url={{ long_url|urlencode }}">See full JSON report here</a></p>
+</div>
+
+</body>
+</html>
