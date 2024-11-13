@@ -96,6 +96,16 @@ cd url_shortner_server
 pip install -r requirements.txt
 ```
 
+#### 3. Sign up for VirusTotal and retrieve an API key
+  1. Sign up [here](https://www.virustotal.com/gui/join-us). We _**strongly**_ recommend signing up with your GitHub account.
+  2. Follow [these instructions](https://docs.virustotal.com/docs/api-overview) to find your API key.
+  3. Create a `.env` file in the `URL-Shortner/url_shortner_server/shortner` directory.
+    
+    touch URL-Shortner/url_shortner_server/shortner/.env 
+  4. Paste your API key in like so:
+
+    VIRUSTOTAL_API_KEY=...
+
 #### 3. Create a MySQL database on your system
 ```
 # Login to MySQL
