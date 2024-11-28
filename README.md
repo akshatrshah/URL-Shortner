@@ -21,26 +21,23 @@
 [![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
 
 ---
-Txtly URL-Shortner
+# Txtly URL-Shortener  
 ---
 
-Welcome to URL-Shortner by Group 21!
+**Welcome to Txtly URL-Shortener by Group 21!**  
 
-Inspired by Group 5's fantastic groundwork, we've taken the core functionality of a URL shortener and enhanced it with new, powerful features to provide a seamless user experience. Our goal? To make URL shortening simple, customizable, and insightful.
+Inspired by the groundwork laid by Group 5, we’ve taken the core functionality of a URL shortener and enhanced it with powerful new features to provide a seamless and user-friendly experience. Txtly is designed to make URL management simple, customizable, and insightful.  
 
 ---
-📖 About the Project
+## About the Project  
 ---
 
-Have you ever:
+Managing URLs can be a hassle, especially when they are long, complex, or need frequent updates. Txtly solves this by offering a feature-rich platform that lets you create short, memorable links that are easy to share and customize. Whether you need to personalize URLs, track their performance, or handle multiple links at once, Txtly provides the tools to do it all in one place.  
 
-Struggled to type out long URLs on your phone?
-Sent the wrong link by mistake?
-Wanted to keep the same URL but update the destination over time?
-If any of this sounds familiar, URL-Shortner is here to help! Designed for simplicity and flexibility, URL-Shortner lets you shorten, customize, update, and delete URLs with just a few clicks. Plus, you can upload multiple URLs in bulk, manage them all from one place, and gather performance insights through our analytics dashboard.
+With Txtly, you can create branded links that align with your identity, update the destination of a URL without changing the link, and monitor link performance with our robust analytics dashboard. For users managing large volumes of links, our bulk upload feature allows for efficient handling of multiple URLs at once. All of this is backed by secure, user-specific account management, ensuring that only you can modify your links.  
 
+Txtly isn’t just a URL shortener—it’s a comprehensive link management solution tailored for modern needs. Whether you’re a business professional, content creator, or casual user, Txtly empowers you to take full control of your URLs.  
 
-If you answered yes to any of the above questions, URL-Shortner is here to simplify your URL management! With this tool, you can create short, memorable links that are easy to share and update as needed. Want to personalize your links? Add custom stubs to make URLs align with your brand. Plus, track link performance with analytics to understand your audience, or upload multiple links at once to manage them all from one place. Whether you’re looking to customize, analyze, or bulk-manage URLs, URL-Shortner has you covered!
 
 
 https://github.com/user-attachments/assets/851e115f-19e7-43c7-9f98-48b024901422
