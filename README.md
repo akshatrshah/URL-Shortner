@@ -61,21 +61,34 @@ Manage large volumes of URLs with ease using our bulk upload feature. Simply upl
 🔒 Secure & Reliable URL Management
 We prioritize your data’s security. With encrypted management for all URLs, your links are safe and fully manageable at any time. Delete, update, or redirect URLs as needed.
 
----
-🛠️ What’s New?
----
+## ✨ Key Enhancements in Txtly URL-Shortener  
 
-Enhanced UI/UX
-A refined user interface designed for simplicity and ease of use.
+Building on the solid foundation laid by Group 5, we’ve integrated advanced features and improvements to elevate the URL-shortening experience:  
 
-User Login & Ownership of URLs
-Sign up and manage your URLs like never before. Only you can edit or delete the links you've created, adding a new layer of security and reliability.
+### 🔗 Customizable Short URLs  
+- Empower your links with custom stubs for branding and better recognition.  
+- Tailor URLs to reflect your identity and enhance user engagement.  
 
-Custom URL Creation
-Your URLs, your way! Choose a custom stub to make links recognizable and brand-aligned.
+### 📊 Advanced URL Analytics  
+- Gain detailed insights into link performance.  
+- Track metrics such as click counts and user behavior, and export data for deeper analysis.  
 
-Advanced Analytics
-Track how often your links are clicked, export them for more detailed understanding, and analyze link performance to better connect with your audience.
+### 📋 Bulk URL Management  
+- Save time with our bulk upload feature!  
+- Easily upload multiple URLs using a CSV file or comma-separated list and manage them from a centralized dashboard.  
+
+### 🔒 Secure and Account-Linked URL Ownership  
+- Protect your URLs with user-specific accounts.  
+- Only logged-in users can edit, update, or delete their created links, ensuring security and ownership.  
+
+### 🖌️ Revamped UI/UX  
+- Navigate with ease using our sleek and intuitive interface, designed for seamless usability.  
+
+### ♻️ Dynamic URL Updates  
+- Keep your short URLs relevant by updating their destinations without changing the link.  
+- Ensure a consistent and reliable user experience.  
+
+These enhancements aim to make Txtly the go-to solution for modern, flexible, and secure URL management!
 
 
 ---
