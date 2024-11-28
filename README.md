@@ -45,6 +45,7 @@ https://github.com/user-attachments/assets/851e115f-19e7-43c7-9f98-48b024901422
 ---
 🚀 Key Features
 ---
+---
 
 🔗 Customizable Short URLs
 Stand out with custom URL stubs! Now, you can create branded, memorable links that align perfectly with your identity and boost user engagement.
@@ -58,7 +59,9 @@ Manage large volumes of URLs with ease using our bulk upload feature. Simply upl
 🔒 Secure & Reliable URL Management
 We prioritize your data’s security. With encrypted management for all URLs, your links are safe and fully manageable at any time. Delete, update, or redirect URLs as needed.
 
+---
 ## ✨ Key Enhancements in Txtly URL-Shortener  
+---
 
 Building on the solid foundation laid by Group 5, we’ve integrated advanced features and improvements to elevate the URL-shortening experience:  
 
@@ -120,6 +123,8 @@ can always manage your URLs!
 ---
 
 ## We love our contributors ❤️❤️
+
+---
 
 Make a [pull request](https://github.com/fantastic-riddles/URL-Shortner/compare) to help contribute.
 
