@@ -1,5 +1,10 @@
 # URL-Shortner 🔗
 
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green
+)](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green
+)
+
 [![GitHub Release](https://img.shields.io/github/v/release/fantastic-riddles/URL-Shortner?style=plastic)](https://github.com/fantastic-riddles/URL-Shortner/releases)
 [![GitHub Tag](https://img.shields.io/github/v/tag/fantastic-riddles/URL-Shortner?style=plastic)](https://github.com/fantastic-riddles/URL-Shortner/releases)
 [![GitHub forks](https://img.shields.io/github/forks/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/network)
@@ -7,6 +12,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/graphs/contributors)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/graphs/commit-activity)
 [![GitHub license](https://img.shields.io/github/license/fantastic-riddles/URL-Shortner)](https://github.com/fantastic-riddles/URL-Shortner/blob/develop/LICENSE)
+[![Collaborators](https://img.shields.io/badge/Collaborators-3-orange.svg?style=flat)](https://github.com/fantastic-riddles/URL-Shortner/graphs/contributors)
 
 <!-- [![Build](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml/badge.svg)](https://github.com/fantastic-riddles/URL-Shortner/actions/workflows/unit_test.yaml) -->
 
@@ -22,7 +28,6 @@
 
 ---
 # Txtly URL-Shortener  
----
 
 **Welcome to Txtly URL-Shortener by Group 21!**  
 
@@ -30,7 +35,6 @@ Inspired by the groundwork laid by Group 5, we’ve taken the core functionality
 
 ---
 ## About the Project  
----
 
 Managing URLs can be a hassle, especially when they are long, complex, or need frequent updates. Txtly solves this by offering a feature-rich platform that lets you create short, memorable links that are easy to share and customize. Whether you need to personalize URLs, track their performance, or handle multiple links at once, Txtly provides the tools to do it all in one place.  
 
@@ -44,8 +48,6 @@ https://github.com/user-attachments/assets/851e115f-19e7-43c7-9f98-48b024901422
 
 ---
 🚀 Key Features
----
----
 
 🔗 Customizable Short URLs
 Stand out with custom URL stubs! Now, you can create branded, memorable links that align perfectly with your identity and boost user engagement.
@@ -61,7 +63,6 @@ We prioritize your data’s security. With encrypted management for all URLs, yo
 
 ---
 ## ✨ Key Enhancements in Txtly URL-Shortener  
----
 
 Building on the solid foundation laid by Group 5, we’ve integrated advanced features and improvements to elevate the URL-shortening experience:  
 
@@ -93,7 +94,6 @@ These enhancements aim to make Txtly the go-to solution for modern, flexible, an
 
 ---
 ### Install
----
 
 1. Go to url_shortner_server
 2. do pip install -r requirements.txt
@@ -123,8 +123,6 @@ can always manage your URLs!
 ---
 
 ## We love our contributors ❤️❤️
-
----
 
 Make a [pull request](https://github.com/fantastic-riddles/URL-Shortner/compare) to help contribute.
 
